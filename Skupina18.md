@@ -8,7 +8,7 @@
 <br>
 <h2> CELE </h2>
 <br>
-<b>Patricija Soršak: Iz Bistrce.. Slovenske Bistrce </b>
+<b>Analina štih:</b>
 <br>
 <br>
 <br>
@@ -17,4 +17,4 @@
 <b>Jaka Šilc:</b>
 <br>
 <br>
-<b>Analina štih:</b>
+<b>Patricija Soršak: Iz Bistrce.. Slovenske Bistrce </b>
