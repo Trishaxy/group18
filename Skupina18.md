@@ -1,4 +1,5 @@
 # GITHUB IN DELO V SKUPINI
 
 
-**NALOGA 1**
+<h2>**NALOGA 1**</h2>
+**OPIS OSEB**
