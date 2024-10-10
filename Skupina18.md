@@ -1,2 +1,3 @@
-# group18
-lala
+# GITHUB IN DELO V SKUPINI
+
+#NALOGA 1
