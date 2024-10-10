@@ -6,7 +6,7 @@
 <b>Nick Selič:</b>
 <b>Born in Celje...from Celje</b>
 <br>
-<<h2> CELE </h2>
+<h2> CELE </h2>
 <br>
 <b>Patricija Soršak:</b>
 <br>
