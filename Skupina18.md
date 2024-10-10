@@ -2,4 +2,6 @@
 
 
 <h2>NALOGA 1</h2>
-**OPIS OSEB**
+<h3>OPIS OSEB</h3>
+<b>Nick:</b>
+djancha
