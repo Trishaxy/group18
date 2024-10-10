@@ -8,7 +8,7 @@
 <br>
 <h2> CELE </h2>
 <br>
-<b>Patricija Soršak:</b>
+<b>Patricija Soršak: Iz Bistrce.. Slovenske Bistrce </b>
 <br>
 <br<
 <br>
