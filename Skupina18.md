@@ -3,13 +3,13 @@
 
 <h2>NALOGA 1</h2>
 <h3>OPIS OSEB</h3>
-<b>Nick Selić:</b>
+<b>Nick Selič:</b>
 <br>
 <br>
-<b>Analina Štih:</b>
+<b>Patricija Soršak:</b>
 <br>
 <br>
 <b>Jaka Šilc:</b>
 <br>
 <br>
-<b>Patricija Soršak:</b>
+<b>Analina štih:</b>
