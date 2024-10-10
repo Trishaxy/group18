@@ -10,7 +10,9 @@
 <br>
 <b>Patricija Soršak: Iz Bistrce.. Slovenske Bistrce </b>
 <br>
-<br<
+<br>
+<br>
+<br>
 <br>
 <b>Jaka Šilc:</b>
 <br>
