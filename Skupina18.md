@@ -5,7 +5,7 @@
 <h3>OPIS OSEB</h3>
 <b>Nick Selič:</b>
 <br>
-<br>a
+<br>
 <b>Patricija Soršak:</b>
 <br>
 <br>
