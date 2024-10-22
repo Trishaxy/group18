@@ -7,7 +7,7 @@ Skupinsko delo
 </h3>
 
 <p align="center">
-1. naloga
+18. skupina
 </p>
 
 
