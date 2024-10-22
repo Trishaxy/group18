@@ -1,3 +1,28 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+</head>
+  
+<body>
+
+<h1>Let's GIT started</h1>
+<p>Delo v skupinah</p>
+<div>1. naloga</div>
+
+</body>
+</html>
+
+
+
+
+
+
 # GITHUB IN DELO V SKUPINI
 
 
