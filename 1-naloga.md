@@ -60,7 +60,7 @@ UPORABA UMETNE INTELIGENCE PRI IZOBRAZEVANJU
 </h3>
 
 >UI v izobraževanju učencem ne pomaga le pri razumevanju trenutnih učnih vsebin, temveč jih pripravlja tudi na prihodnost. S tehnologijo, kot so programi za reševanje problemov, simulacije in digitalna orodja, lahko učenci razvijajo veščine, kot so kritično mišljenje, reševanje kompleksnih problemov in sodelovanje [4]. Te kompetence bodo ključne v prihodnjem delovnem okolju, kjer se bodo tehnologije stalno razvijale.
-
+![AI](What_is_Generative_AI_63beafff52.webp)
 <br>
 
 <h3 align="center">
