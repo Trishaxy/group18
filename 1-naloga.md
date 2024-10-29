@@ -56,42 +56,42 @@ UPORABA UMETNE INTELIGENCE PRI IZOBRAZEVANJU
 <br>
 
 <h3 align="center">
--NaSlOv Z vLkImI cRkAmI-
+-VPLIV UMETNE INTELIGENCE NA RAZVOJ KOMPETENC PRIHODNOSTI-
 </h3>
 
->
+>UI v izobraževanju učencem ne pomaga le pri razumevanju trenutnih učnih vsebin, temveč jih pripravlja tudi na prihodnost. S tehnologijo, kot so programi za reševanje problemov, simulacije in digitalna orodja, lahko učenci razvijajo veščine, kot so kritično mišljenje, reševanje kompleksnih problemov in sodelovanje [4]. Te kompetence bodo ključne v prihodnjem delovnem okolju, kjer se bodo tehnologije stalno razvijale.
 
 <br>
 
 <h3 align="center">
--NaSlOv Z vLkImI cRkAmI-
+-VLOGA UMETNE INTELIGENCE V POSEBNEM IZOBRAŽEVANJU-
 </h3>
 
->
+>UI lahko močno prispeva k izboljšanju izobraževanja za otroke s posebnimi potrebami. Sistemi umetne inteligence omogočajo prilagoditve učnih vsebin glede na posamezne potrebe učencev, ne glede na njihovo stopnjo ali vrsto učnih težav [4]. Na primer, tehnologija lahko pomaga pri učenju branja, komunikaciji ali premostitvi težav z motnjami pozornosti, kar povečuje vključevanje vseh otrok v izobraževalni proces [10]
 
 <br>
 
 <h3 align="center">
--NaSlOv Z vLkImI cRkAmI-
+-SPODBUJANJE KREATIVNOSTI S POMOČJO UMETNE INTELIGENCE-
 </h3>
 
->
+>Umetna inteligenca ni omejena le na analitične naloge; lahko tudi spodbuja kreativnost učencev. Orodja, ki temeljijo na UI, omogočajo ustvarjanje glasbe, umetnosti, videoposnetkov ali literarnih del na popolnoma nove načine. Tako učencem omogočajo, da se izrazijo in preizkušajo svoje ideje v različnih medijih [9]. S tem se povečuje njihov kreativni potencial, hkrati pa razvijajo tehnične spretnosti.
 
 <br>
 
 <h3 align="center">
--NaSlOv Z vLkImI cRkAmI-
+-PRIPRAVA UČITELJEV NA SODELOVANJE Z UI-
 </h3>
 
->
+>Uvedba umetne inteligence v šole pomeni tudi izziv za učitelje, ki se morajo naučiti uporabljati ta nova orodja. Potrebno je ustrezno usposabljanje, da bi razumeli, kako najbolje uporabiti UI za podporo učnemu procesu [8]. Učitelji bodo morali biti vešči upravljanja in vrednotenja tehnologij, hkrati pa bodo ohranili svojo ključno vlogo pri osebnem mentoriranju in vodenju učencev.
 
 <br>
 
 <h3 align="center">
--NaSlOv Z vLkImI cRkAmI-
+-PRIHODNOST UMETNE INTELIGENCE V ŠOLAH-
 </h3>
 
->
+>Glede na hitri razvoj umetne inteligence je pričakovati, da bodo šole v prihodnosti vse bolj integrirale to tehnologijo v vsakdanje učne procese [6]. Razvoj adaptivnih učnih platform, ki se sproti prilagajajo potrebam učencev, in naprednih analitičnih orodij, ki bodo učiteljem pomagali prepoznati učne vzorce, lahko povsem preoblikuje način, kako razumemo in izvajamo izobraževanje.
 
 <br>
 
