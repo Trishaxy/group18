@@ -100,42 +100,42 @@ UPORABA UMETNE INTELIGENCE PRI IZOBRAZEVANJU
 <br>
 
 <h3 align="center">
--NaSlOv Z vLkImI cRkAmI-
+-VPLIV UMETNE INTELIGENCE NA UČNE PRAKSE-
 </h3>
 
->
+>Umetna inteligenca prinaša spremembe v učne prakse, saj učiteljem omogoča bolj ciljno usmerjeno poučevanje. Z uporabo analitičnih orodij lahko učitelji pridobijo vpogled v napredovanje učencev in hitro prepoznajo tiste, ki potrebujejo dodatno podporo [7]. Ta pristop povečuje učinkovitost poučevanja, saj lahko učitelji prilagodijo svoje metode in materiale, da bolje ustrezajo potrebam svojih učencev [2].
 
 <br>
 
 <h3 align="center">
--NaSlOv Z vLkImI cRkAmI-
+-INTEGRACIJA UMETNE INTELIGENCE V KURIKULUM-
 </h3>
 
->
+>Učinkovita integracija umetne inteligence v kurikulum zahteva celovit pristop. Šole morajo razviti strategije, ki vključujejo usposabljanje učiteljev, prilagoditev učnih načrtov ter zagotavljanje dostopa do tehnologije za vse učence [8]. To vključuje tudi obravnavo vprašanj, kot so dostopnost in enakopravnost pri uporabi tehnologije. Le s premišljeno integracijo lahko UI postane koristno orodje v učnem procesu.
 
 <br>
 
 <h3 align="center">
--NaSlOv Z vLkImI cRkAmI-
+-VLOGA STARŠEV IN SKUPNOSTI-
 </h3>
 
->
+>Uspeh umetne inteligence v šolah ni odvisen le od učiteljev in učencev, temveč tudi od aktivne vloge staršev in širše skupnosti. Starši se morajo vključiti v proces izobraževanja, razumeti koristi in izzive, ki jih prinaša tehnologija, ter spodbujati svoje otroke k odgovorni uporabi teh orodij [10]. Sodelovanje med šolami in skupnostjo lahko zagotovi dodatne vire in podporo, kar povečuje uspešnost uvajanja UI v izobraževanje.
 
 <br>
 
 <h3 align="center">
--NaSlOv Z vLkImI cRkAmI-
+-UČINKI UMETNE INTELIGENCE NA SOCIALNE VEŠČINE-
 </h3>
 
->
+>Pri uvajanju umetne inteligence v šole je treba tudi razmisliti o vplivu na socialne veščine učencev. Medtem ko UI ponuja številne prednosti, je pomembno ohraniti ravnotežje med digitalnim učenjem in socialno interakcijo [9]. Učitelji morajo spodbujati sodelovanje, skupinsko delo in komunikacijo, da zagotovijo celosten razvoj učencev, ki ne vključuje le akademskih znanj, temveč tudi medosebnih spretnosti.
 
 <br>
 
 <h3 align="center">
--NaSlOv Z vLkImI cRkAmI-
+-ETIKA IN ODGOVORNOST PRI UPORABI UMETNE INTELIGENCE-
 </h3>
 
->
+>Z uvajanjem umetne inteligence v izobraževanje se pojavljajo številna etična vprašanja. Pomembno je zagotoviti, da se podatki učencev obravnavajo varno in odgovorno [5]. Šole morajo razviti politike za zaščito zasebnosti in zagotoviti, da so sistemi UI zasnovani tako, da ne diskriminirajo ter spodbujajo enakost med učenci. Razumevanje teh vprašanj je ključno za etično uporabo tehnologije v izobraževanju.
 
 <br>
 
