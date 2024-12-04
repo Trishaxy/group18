@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="sl">
 <head>
@@ -36,25 +37,24 @@
             font-weight: bold;
         }
         .content {
-            display: flex;
             padding: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
         }
-        .content img {
+        .section {
+            margin-bottom: 30px;
+        }
+        .section img {
             max-width: 40%;
             height: auto;
             margin: 10px;
             border: 3px solid #00aaff;
             border-radius: 10px;
+            float: right;
         }
-        .text {
-            margin: 20px;
-            max-width: 600px;
-            text-align: justify;
-        }
-        .text h2 {
+        .section h2 {
             color: #00aaff;
+        }
+        .section p {
+            text-align: justify;
         }
         #date {
             position: fixed;
@@ -86,20 +86,38 @@
     </div>
     <div class="nav">
         <a href="uvod.html">Uvod</a>
-        <a href="kompotence.html">Kompetence prihodnosti</a>
+        <a href="kompetence.html">Kompetence prihodnosti</a>
         <a href="ucni_stili.html">AI in učni stili</a>
         <a href="ucne_prakse.html">AI v učnih praksah</a>
     </div>
     <div class="content">
-        <img src="https://via.placeholder.com/400x300?text=Personalizirano+učenje" alt="Personalizirano učenje">
-        <div class="text">
-            <p>V tej seminarski nalogi smo raziskali rastočo vlogo umetne inteligence (UI) v izobraževanju ter njen potencial za izboljšanje učnih procesov in prilagoditev potrebam učencev. Osredotočili smo se na ključne teme, kot so personalizirano učenje, avtomatizacija ocenjevanja in uporaba virtualnih učiteljev.</p>
-            <p>Poudarili smo tudi izzive, kot so etična vprašanja, zaščita zasebnosti in vprašanja dostopnosti, ki jih prinaša integracija UI v izobraževalni sistem. Bralec lahko pričakuje, da bo spoznal, kako umetna inteligenca prispeva k izboljšanju učnih metod, razvijanju kritičnega mišljenja in spodbujanju vključevanja učencev z različnimi potrebami.</p>
+        <div class="section">
+            <h2>Uvod</h2>
+            <p>Uporaba umetne inteligence (UI) v šolah se v zadnjih letih hitro povečuje. Z napredkom tehnologije so se razvile številne rešitve, ki olajšujejo tako učenje kot poučevanje. UI omogoča personalizirano učenje, avtomatizacijo ocenjevanja in prilagodljive učne metode, kar lahko izboljša učinkovitost izobraževalnega sistema [1].</p>
         </div>
-        <img src="https://via.placeholder.com/400x300?text=AI+v+šolah" alt="AI v šolah">
+        <div class="section">
+            <h2>Personalizirano učenje z UI</h2>
+            <img src="Personalizirano_učenje.png" alt="Personalizirano učenje">
+            <p>Ena najpomembnejših prednosti umetne inteligence je sposobnost prilagoditve učnega procesa posameznemu učencu. S pomočjo analize podatkov lahko UI prepozna prednosti in slabosti učenca ter predlaga vaje in vire, ki so prilagojeni njegovemu znanju. To omogoča bolj učinkovito učenje in napredek vsakega posameznika [3].</p>
+        </div>
+        <div class="section">
+            <h2>Umetna inteligenca kot pomoč pri ocenjevanju</h2>
+            <img src="Avtomatizirano_ocenjevanje.png" alt="Avtomatizirano ocenjevanje">
+            <p>UI omogoča avtomatizacijo številnih nalog, ki so sicer zamudne za učitelje, kot so ocenjevanje testov, nalog in kvizov. S tem učiteljem prihrani čas in omogoči, da se bolj osredotočijo na pedagoški proces [2]. Poleg tega lahko sistemi UI nudijo takojšnje povratne informacije učencem, kar izboljša učni proces [6].</p>
+        </div>
+        <div class="section">
+            <h2>Virtualni učitelji in asistenti</h2>
+            <img src="Virtualni_učitelji.png" alt="Virtualni učitelji">
+            <p>Vse več je aplikacij, ki delujejo kot virtualni učitelji ali asistenti. Ti sistemi lahko učencem pomagajo pri razumevanju snovi izven učilnice, saj so dostopni kadarkoli. Z uporabo naravnega jezika lahko odgovarjajo na vprašanja in ponujajo dodatne razlage, kar učencem omogoča lažje in hitrejše razumevanje snovi [7].</p>
+        </div>
+        <div class="section">
+            <h2>Izzivi in omejitve uporabe UI v izobraževanju</h2>
+            <img src="Izzivi_in_omejitve.png" alt="Izzivi in omejitve">
+            <p>Kljub številnim prednostim pa uporaba umetne inteligence v šolah prinaša tudi nekatere izzive. Med glavne težave sodijo etična vprašanja glede zasebnosti podatkov, varnosti in nepristranskosti sistemov UI [5]. Prav tako se pojavlja vprašanje, ali lahko UI nadomesti učitelje, ali pa naj služi kot dopolnitev tradicionalnih metod poučevanja [10].</p>
+        </div>
     </div>
     <div class="cookie-container">
-        <img id="cookie" src="https://via.placeholder.com/150?text=Piškotek" alt="Piškotek">
+        <img id="cookie" src="Piškotek.png" alt="Piškotek">
         <div id="clicks">Klikni na piškotek!</div>
     </div>
     <div id="date"></div>
