@@ -36,33 +36,47 @@
             font-weight: bold;
         }
         .content {
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            padding: 20px;
+            gap: 30px;
         }
         .section {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+            gap: 20px;
             background-color: rgba(255, 255, 255, 0.1);
             border: 2px solid #00aaff;
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            gap: 20px;
         }
         .section img {
             width: 30%;
             border-radius: 10px;
             border: 2px solid #00aaff;
         }
-        .section h2 {
-            color: #00aaff;
-            margin-bottom: 10px;
-        }
-        .section p {
-            text-align: justify;
+        .section .text-content {
             flex: 1;
+            position: relative;
+        }
+        .text-content h2 {
+            color: #00aaff;
+            margin: 0 0 10px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .text-content h2:hover {
+            color: #ffcc00;
+        }
+        .text-content p {
+            display: none;
+            margin: 10px 0 0;
+            color: #ffffff;
+            text-align: justify;
+        }
+        .text-content h2:hover + p {
+            display: block;
         }
         #date {
             position: fixed;
@@ -101,28 +115,28 @@
     <div class="content">
         <div class="section">
             <img src="Personalizirano_učenje.png" alt="Personalizirano učenje">
-            <div>
+            <div class="text-content">
                 <h2>Personalizirano učenje z UI</h2>
                 <p>Ena najpomembnejših prednosti umetne inteligence je sposobnost prilagoditve učnega procesa posameznemu učencu. S pomočjo analize podatkov lahko UI prepozna prednosti in slabosti učenca ter predlaga vaje in vire, ki so prilagojeni njegovemu znanju. To omogoča bolj učinkovito učenje in napredek vsakega posameznika [3].</p>
             </div>
         </div>
         <div class="section">
             <img src="Avtomatizirano_ocenjevanje.png" alt="Avtomatizirano ocenjevanje">
-            <div>
+            <div class="text-content">
                 <h2>Umetna inteligenca kot pomoč pri ocenjevanju</h2>
                 <p>UI omogoča avtomatizacijo številnih nalog, ki so sicer zamudne za učitelje, kot so ocenjevanje testov, nalog in kvizov. S tem učiteljem prihrani čas in omogoči, da se bolj osredotočijo na pedagoški proces [2]. Poleg tega lahko sistemi UI nudijo takojšnje povratne informacije učencem, kar izboljša učni proces [6].</p>
             </div>
         </div>
         <div class="section">
             <img src="Virtualni_učitelji.png" alt="Virtualni učitelji">
-            <div>
+            <div class="text-content">
                 <h2>Virtualni učitelji in asistenti</h2>
                 <p>Vse več je aplikacij, ki delujejo kot virtualni učitelji ali asistenti. Ti sistemi lahko učencem pomagajo pri razumevanju snovi izven učilnice, saj so dostopni kadarkoli. Z uporabo naravnega jezika lahko odgovarjajo na vprašanja in ponujajo dodatne razlage, kar učencem omogoča lažje in hitrejše razumevanje snovi [7].</p>
             </div>
         </div>
         <div class="section">
             <img src="Izzivi_in_omejitve.png" alt="Izzivi in omejitve">
-            <div>
+            <div class="text-content">
                 <h2>Izzivi in omejitve uporabe UI v izobraževanju</h2>
                 <p>Kljub številnim prednostim pa uporaba umetne inteligence v šolah prinaša tudi nekatere izzive. Med glavne težave sodijo etična vprašanja glede zasebnosti podatkov, varnosti in nepristranskosti sistemov UI [5]. Prav tako se pojavlja vprašanje, ali lahko UI nadomesti učitelje, ali pa naj služi kot dopolnitev tradicionalnih metod poučevanja [10].</p>
             </div>
