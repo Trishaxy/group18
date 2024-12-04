@@ -22,6 +22,7 @@
         .header h1 {
             margin: 0;
             color: #00aaff;
+            font-size: 2.5em;
         }
         .nav {
             display: flex;
@@ -34,6 +35,7 @@
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
+            font-size: 1.2em;
         }
         .content {
             padding: 20px;
@@ -64,16 +66,20 @@
             color: #00aaff;
             margin: 0 0 10px;
             cursor: pointer;
-            transition: color 0.3s ease;
+            font-size: 1.8em;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
         .text-content h2:hover {
             color: #ffcc00;
+            transform: scale(1.05);
         }
         .text-content p {
             display: none;
             margin: 10px 0 0;
             color: #ffffff;
             text-align: justify;
+            font-size: 1.2em;
+            line-height: 1.6;
         }
         .text-content h2:hover + p {
             display: block;
@@ -82,7 +88,7 @@
             position: fixed;
             bottom: 20px;
             left: 20px;
-            font-size: 1em;
+            font-size: 1.2em;
             color: #ffffff;
             padding: 5px 10px;
             border-radius: 5px;
