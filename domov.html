@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(180deg, #000000,#0e5886,#000000);
+            background: linear-gradient(180deg, #000000, #0e5886, #000000);
             color: #ffffff;
             margin: 0;
             padding: 0;
@@ -38,17 +38,19 @@
         .content {
             display: flex;
             padding: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .content img {
-            max-width: 50%;
+            max-width: 40%;
             height: auto;
-            margin-right: 20px;
-            margin-left: 20px;
+            margin: 10px;
+            border: 3px solid #00aaff;
+            border-radius: 10px;
         }
         .text {
-            margin-left: 20px;
-            margin-right: 20px;
-            max-width: fit-content;
+            margin: 20px;
+            max-width: 600px;
             text-align: justify;
         }
         .text h2 {
@@ -63,7 +65,6 @@
             padding: 5px 10px;
             border-radius: 5px;
         }
-                }
         .cookie-container {
             text-align: center;
             margin: 50px auto;
@@ -90,13 +91,15 @@
         <a href="ucne_prakse.html">AI v učnih praksah</a>
     </div>
     <div class="content">
-        <img src="./public/images/image 1.png" alt="">
+        <img src="https://via.placeholder.com/400x300?text=Personalizirano+učenje" alt="Personalizirano učenje">
         <div class="text">
-            <p>V tej seminarski nalogi smo raziskali rastočo vlogo umetne inteligence (UI) v izobraževanju ter njen potencial za izboljšanje učnih procesov in prilagoditev potrebam učencev. Osredotočili smo se na ključne teme, kot so personalizirano učenje, avtomatizacija ocenjevanja in uporaba virtualnih učiteljev. Poudarili smo tudi izzive, kot so etična vprašanja, zaščita zasebnosti in vprašanja dostopnosti, ki jih prinaša integracija UI v izobraževalni sistem. Bralec lahko pričakuje, da bo spoznal, kako umetna inteligenca prispeva k izboljšanju učnih metod, razvijanju kritičnega mišljenja in spodbujanju vključevanja učencev z različnimi potrebami. Na koncu naloge obravnavamo prihodnost umetne inteligence v šolah in poudarjamo potrebo po celovitem pristopu pri njeni implementaciji, kar vključuje usposabljanje učiteljev, sodelovanje staršev in skupnosti ter etično uporabo tehnologij.            </p>
+            <p>V tej seminarski nalogi smo raziskali rastočo vlogo umetne inteligence (UI) v izobraževanju ter njen potencial za izboljšanje učnih procesov in prilagoditev potrebam učencev. Osredotočili smo se na ključne teme, kot so personalizirano učenje, avtomatizacija ocenjevanja in uporaba virtualnih učiteljev.</p>
+            <p>Poudarili smo tudi izzive, kot so etična vprašanja, zaščita zasebnosti in vprašanja dostopnosti, ki jih prinaša integracija UI v izobraževalni sistem. Bralec lahko pričakuje, da bo spoznal, kako umetna inteligenca prispeva k izboljšanju učnih metod, razvijanju kritičnega mišljenja in spodbujanju vključevanja učencev z različnimi potrebami.</p>
         </div>
+        <img src="https://via.placeholder.com/400x300?text=AI+v+šolah" alt="AI v šolah">
     </div>
-       <div class="cookie-container">
-        <img id="cookie" src="cookie.png" alt="Piškotek">
+    <div class="cookie-container">
+        <img id="cookie" src="https://via.placeholder.com/150?text=Piškotek" alt="Piškotek">
         <div id="clicks">Klikni na piškotek!</div>
     </div>
     <div id="date"></div>
@@ -110,8 +113,8 @@
             day: 'numeric'
         });
         document.getElementById('date').textContent = formattedDate;
-            
-               let steviloKlikov = 0; //cookie clicker
+
+        let steviloKlikov = 0; // Cookie clicker
         function pravilnoSklanjanje(stevilo) {
             if (stevilo === 1) {
                 return `${stevilo} klik`;
