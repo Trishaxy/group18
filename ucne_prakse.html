@@ -44,6 +44,15 @@
         .text p {
             margin-bottom: 20px;
         }
+        #date {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            font-size: 1em;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -60,5 +69,17 @@
         <div class="text">
         </div>
     </div>
+    <div id="date"></div>
+    <script>
+        const now = new Date();
+        const formattedDate = now.toLocaleDateString('sl-SI', 
+        {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        document.getElementById('date').textContent = formattedDate;
+    </script>
 </body>
 </html>
