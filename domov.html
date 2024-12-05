@@ -61,28 +61,31 @@
         .section .text-content {
             flex: 1;
             position: relative;
+            overflow: hidden;
         }
         .text-content h2 {
             color: #00aaff;
-            margin: 0 0 10px;
-            cursor: pointer;
+            margin: 0;
             font-size: 1.8em;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .text-content h2:hover {
-            color: #ffcc00;
-            transform: scale(1.05);
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
         .text-content p {
-            display: none;
+            font-size: 25px;
+            line-height: 1.6;
             margin: 10px 0 0;
             color: #ffffff;
             text-align: justify;
-            font-size: 20px; /* Velikost besedila */
-            line-height: 1.6;
+            display: none;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
-        .text-content h2:hover + p {
+        .text-content:hover h2 {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        .text-content:hover p {
             display: block;
+            transform: translateY(0);
+            opacity: 1;
         }
         #date {
             position: fixed;
