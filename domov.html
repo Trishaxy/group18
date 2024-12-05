@@ -94,6 +94,20 @@
             padding: 5px 10px;
             border-radius: 5px;
         }
+                }
+        .cookie-container {
+            text-align: center;
+            margin: 50px auto;
+        }
+        #cookie {
+            width: 150px;
+            cursor: pointer;
+        }
+        #clicks {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #00ff00;
+        }
     </style>
 </head>
 <body>
@@ -136,6 +150,10 @@
             </div>
         </div>
     </div>
+       <div class="cookie-container">
+        <img id="cookie" src="https://via.placeholder.com/150?text=Piškotek" alt="Piškotek">
+        <div id="clicks">Klikni na piškotek!</div>
+    </div>
     <div id="date"></div>
     <script>
         const now = new Date();
@@ -147,6 +165,21 @@
             day: 'numeric'
         });
         document.getElementById('date').textContent = formattedDate;
+                let steviloKlikov = 0; // Cookie clicker
+        function pravilnoSklanjanje(stevilo) {
+            if (stevilo === 1) {
+                return `${stevilo} klik`;
+            } else if (stevilo >= 2 && stevilo <= 4) {
+                return `${stevilo} klika`;
+            } else {
+                return `${stevilo} klikov`;
+            }
+        }
+
+        document.getElementById('cookie').addEventListener('click', () => {
+            steviloKlikov++;
+            document.getElementById('clicks').textContent = pravilnoSklanjanje(steviloKlikov);
+        });
     </script>
 </body>
 </html>
