@@ -94,22 +94,8 @@
             padding: 5px 10px;
             border-radius: 5px;
         }
-        /* Cookie Clicker styles */
-         .cookie-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            text-align: center;
-        }
-        #cookie {
-            width: 150px;
-            cursor: pointer;
-        }
-        #clicks {
-            font-size: 1.5em;
-            margin-top: 10px;
-            color: #00ff00;
-        }
+       
+  
         }
     </style>
 </head>
@@ -133,11 +119,7 @@
         </div>
         <!-- Ostale sekcije so iste kot prej -->
     </div>
-    <!-- Cookie Clicker -->
-   <div class="cookie-container">
-        <img id="cookie" src="cookie.png" alt="Piškotek">
-        <div id="clicks">Klikni na piškotek!</div>
-    </div>
+
     <div id="date"></div>
     <script>
         // Prikaz trenutnega datuma
@@ -151,24 +133,6 @@
         });
         document.getElementById('date').textContent = formattedDate;
 
-        // Cookie Clicker logika
-      
-        // Cookie clicker logic
-        let steviloKlikov = 0; 
-        function pravilnoSklanjanje(stevilo) {
-            if (stevilo === 1) {
-                return `${stevilo} klik`;
-            } else if (stevilo >= 2 && stevilo <= 4) {
-                return `${stevilo} klika`;
-            } else {
-                return `${stevilo} klikov`;
-            }
-        }
-
-        document.getElementById('cookie').addEventListener('click', () => {
-            steviloKlikov++;
-            document.getElementById('clicks').textContent = pravilnoSklanjanje(steviloKlikov);
-       
         });
     </script>
 </body>
