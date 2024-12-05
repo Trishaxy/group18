@@ -94,10 +94,11 @@
             padding: 5px 10px;
             border-radius: 5px;
         }
-                }
         .cookie-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
             text-align: center;
-            margin: 50px auto;
         }
         #cookie {
             width: 150px;
@@ -105,7 +106,7 @@
         }
         #clicks {
             font-size: 1.5em;
-            margin-top: 20px;
+            margin-top: 10px;
             color: #00ff00;
         }
     </style>
@@ -150,8 +151,8 @@
             </div>
         </div>
     </div>
-       <div class="cookie-container">
-        <img id="cookie" src="https://via.placeholder.com/150?text=Piškotek" alt="Piškotek">
+    <div class="cookie-container">
+        <img id="cookie" src="cookie.png" alt="Piškotek">
         <div id="clicks">Klikni na piškotek!</div>
     </div>
     <div id="date"></div>
@@ -165,7 +166,9 @@
             day: 'numeric'
         });
         document.getElementById('date').textContent = formattedDate;
-                let steviloKlikov = 0; // Cookie clicker
+
+        // Cookie clicker logic
+        let steviloKlikov = 0; 
         function pravilnoSklanjanje(stevilo) {
             if (stevilo === 1) {
                 return `${stevilo} klik`;
