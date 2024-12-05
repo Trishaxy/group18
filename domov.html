@@ -44,48 +44,46 @@
             gap: 30px;
         }
         .section {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 2px solid #00aaff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
         }
         .section img {
-            width: 30%;
+            width: 100%;
             border-radius: 10px;
             border: 2px solid #00aaff;
         }
-        .section .text-content {
-            flex: 1;
-            position: relative;
-            overflow: hidden;
-        }
-        .text-content h2 {
-            color: #00aaff;
-            margin: 0;
-            font-size: 1.8em;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-        .text-content p {
-            font-size: 25px;
-            line-height: 1.6;
-            margin: 10px 0 0;
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
             color: #ffffff;
-            text-align: justify;
-            display: none;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-        .text-content:hover h2 {
-            transform: translateY(-50px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
             opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        .text-content:hover p {
-            display: block;
-            transform: translateY(0);
+        .section:hover .overlay {
             opacity: 1;
+        }
+        .overlay h2 {
+            color: #00aaff;
+            font-size: 1.8em;
+            margin: 0 0 10px;
+            text-align: center;
+        }
+        .overlay p {
+            font-size: 25px;
+            text-align: center;
+            margin: 0 20px;
+            line-height: 1.6;
         }
         #date {
             position: fixed;
@@ -95,19 +93,6 @@
             color: #ffffff;
             padding: 5px 10px;
             border-radius: 5px;
-        }
-        .cookie-container {
-            text-align: center;
-            margin: 50px auto;
-        }
-        #cookie {
-            width: 150px;
-            cursor: pointer;
-        }
-        #clicks {
-            font-size: 1.5em;
-            margin-top: 20px;
-            color: #00ff00;
         }
     </style>
 </head>
@@ -124,36 +109,32 @@
     <div class="content">
         <div class="section">
             <img src="Personalizirano_učenje.png" alt="Personalizirano učenje">
-            <div class="text-content">
+            <div class="overlay">
                 <h2>Personalizirano učenje z UI</h2>
                 <p>Ena najpomembnejših prednosti umetne inteligence je sposobnost prilagoditve učnega procesa posameznemu učencu. S pomočjo analize podatkov lahko UI prepozna prednosti in slabosti učenca ter predlaga vaje in vire, ki so prilagojeni njegovemu znanju. To omogoča bolj učinkovito učenje in napredek vsakega posameznika [3].</p>
             </div>
         </div>
         <div class="section">
             <img src="Avtomatizirano_ocenjevanje.png" alt="Avtomatizirano ocenjevanje">
-            <div class="text-content">
+            <div class="overlay">
                 <h2>Umetna inteligenca kot pomoč pri ocenjevanju</h2>
                 <p>UI omogoča avtomatizacijo številnih nalog, ki so sicer zamudne za učitelje, kot so ocenjevanje testov, nalog in kvizov. S tem učiteljem prihrani čas in omogoči, da se bolj osredotočijo na pedagoški proces [2]. Poleg tega lahko sistemi UI nudijo takojšnje povratne informacije učencem, kar izboljša učni proces [6].</p>
             </div>
         </div>
         <div class="section">
             <img src="Virtualni_učitelji.png" alt="Virtualni učitelji">
-            <div class="text-content">
+            <div class="overlay">
                 <h2>Virtualni učitelji in asistenti</h2>
                 <p>Vse več je aplikacij, ki delujejo kot virtualni učitelji ali asistenti. Ti sistemi lahko učencem pomagajo pri razumevanju snovi izven učilnice, saj so dostopni kadarkoli. Z uporabo naravnega jezika lahko odgovarjajo na vprašanja in ponujajo dodatne razlage, kar učencem omogoča lažje in hitrejše razumevanje snovi [7].</p>
             </div>
         </div>
         <div class="section">
             <img src="Izzivi_in_omejitve.png" alt="Izzivi in omejitve">
-            <div class="text-content">
+            <div class="overlay">
                 <h2>Izzivi in omejitve uporabe UI v izobraževanju</h2>
                 <p>Kljub številnim prednostim pa uporaba umetne inteligence v šolah prinaša tudi nekatere izzive. Med glavne težave sodijo etična vprašanja glede zasebnosti podatkov, varnosti in nepristranskosti sistemov UI [5]. Prav tako se pojavlja vprašanje, ali lahko UI nadomesti učitelje, ali pa naj služi kot dopolnitev tradicionalnih metod poučevanja [10].</p>
             </div>
         </div>
-    </div>
-    <div class="cookie-container">
-        <img id="cookie" src="cookie.png" alt="Piškotek">
-        <div id="clicks">Klikni na piškotek!</div>
     </div>
     <div id="date"></div>
     <script>
@@ -166,22 +147,6 @@
             day: 'numeric'
         });
         document.getElementById('date').textContent = formattedDate;
-
-        let steviloKlikov = 0; // Cookie clicker
-        function pravilnoSklanjanje(stevilo) {
-            if (stevilo === 1) {
-                return `${stevilo} klik`;
-            } else if (stevilo >= 2 && stevilo <= 4) {
-                return `${stevilo} klika`;
-            } else {
-                return `${stevilo} klikov`;
-            }
-        }
-
-        document.getElementById('cookie').addEventListener('click', () => {
-            steviloKlikov++;
-            document.getElementById('clicks').textContent = pravilnoSklanjanje(steviloKlikov);
-        });
     </script>
 </body>
 </html>
