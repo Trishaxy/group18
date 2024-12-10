@@ -109,80 +109,134 @@
             margin-top: 10px;
             color: #00ff00;
         }
+        .theme-toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        #theme-toggle {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #00aaff;
+            color: white;
+        }
+        .light-mode {
+            background: white;
+            color: black;
+        }
+        .light-mode .header {
+            background-color: #f0f0f0;
+        }
+        .light-mode .nav {
+            background-color: white;
+        }
+        .light-mode .nav a {
+            color: #0077cc;
+        }
+        .light-mode .overlay {
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+        }
+        .light-mode .overlay h2 {
+            color: #0077cc;
+        }
+        .light-mode #date {
+            color: black;
+        }
+        .light-mode #clicks {
+            color: #0077cc;
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Uporaba umetne inteligence pri izobraževanju</h1>
-    </div>
-    <div class="nav">
-        <a href="uvod.html">Uvod</a>
-        <a href="kompetence.html">Kompetence prihodnosti</a>
-        <a href="ucni_stili.html">AI in učni stili</a>
-        <a href="ucne_prakse.html">AI v učnih praksah</a>
-    </div>
-    <div class="content">
-        <div class="section">
-            <img src="Personalizirano_učenje.png" alt="Personalizirano učenje">
-            <div class="overlay">
-                <h2>Personalizirano učenje z UI</h2>
-                <p>Ena najpomembnejših prednosti umetne inteligence je sposobnost prilagoditve učnega procesa posameznemu učencu. S pomočjo analize podatkov lahko UI prepozna prednosti in slabosti učenca ter predlaga vaje in vire, ki so prilagojeni njegovemu znanju. To omogoča bolj učinkovito učenje in napredek vsakega posameznika [3].</p>
-            </div>
-        </div>
-        <div class="section">
-            <img src="Avtomatizirano_ocenjevanje.png" alt="Avtomatizirano ocenjevanje">
-            <div class="overlay">
-                <h2>Umetna inteligenca kot pomoč pri ocenjevanju</h2>
-                <p>UI omogoča avtomatizacijo številnih nalog, ki so sicer zamudne za učitelje, kot so ocenjevanje testov, nalog in kvizov. S tem učiteljem prihrani čas in omogoči, da se bolj osredotočijo na pedagoški proces [2]. Poleg tega lahko sistemi UI nudijo takojšnje povratne informacije učencem, kar izboljša učni proces [6].</p>
-            </div>
-        </div>
-        <div class="section">
-            <img src="Virtualni_učitelji.png" alt="Virtualni učitelji">
-            <div class="overlay">
-                <h2>Virtualni učitelji in asistenti</h2>
-                <p>Vse več je aplikacij, ki delujejo kot virtualni učitelji ali asistenti. Ti sistemi lahko učencem pomagajo pri razumevanju snovi izven učilnice, saj so dostopni kadarkoli. Z uporabo naravnega jezika lahko odgovarjajo na vprašanja in ponujajo dodatne razlage, kar učencem omogoča lažje in hitrejše razumevanje snovi [7].</p>
-            </div>
-        </div>
-        <div class="section">
-            <img src="Izzivi_in_omejitve.png" alt="Izzivi in omejitve">
-            <div class="overlay">
-                <h2>Izzivi in omejitve uporabe UI v izobraževanju</h2>
-                <p>Kljub številnim prednostim pa uporaba umetne inteligence v šolah prinaša tudi nekatere izzive. Med glavne težave sodijo etična vprašanja glede zasebnosti podatkov, varnosti in nepristranskosti sistemov UI [5]. Prav tako se pojavlja vprašanje, ali lahko UI nadomesti učitelje, ali pa naj služi kot dopolnitev tradicionalnih metod poučevanja [10].</p>
-            </div>
+<div class="theme-toggle-container">
+    <button id="theme-toggle">Dark Mode</button>
+</div>
+<div class="header">
+    <h1>Uporaba umetne inteligence pri izobraževanju</h1>
+</div>
+<div class="nav">
+    <a href="uvod.html">Uvod</a>
+    <a href="kompetence.html">Kompetence prihodnosti</a>
+    <a href="ucni_stili.html">AI in učni stili</a>
+    <a href="ucne_prakse.html">AI v učnih praksah</a>
+</div>
+<div class="content">
+    <div class="section">
+        <img src="Personalizirano_učenje.png" alt="Personalizirano učenje">
+        <div class="overlay">
+            <h2>Personalizirano učenje z UI</h2>
+            <p>Ena najpomembnejših prednosti umetne inteligence je sposobnost prilagoditve učnega procesa posameznemu učencu. S pomočjo analize podatkov lahko UI prepozna prednosti in slabosti učenca ter predlaga vaje in vire, ki so prilagojeni njegovemu znanju. To omogoča bolj učinkovito učenje in napredek vsakega posameznika [3].</p>
         </div>
     </div>
-    <div class="cookie-container">
-        <img id="cookie" src="cookie.png" alt="Piškotek">
-        <div id="clicks">Klikni na piškotek!</div>
+    <div class="section">
+        <img src="Avtomatizirano_ocenjevanje.png" alt="Avtomatizirano ocenjevanje">
+        <div class="overlay">
+            <h2>Umetna inteligenca kot pomoč pri ocenjevanju</h2>
+            <p>UI omogoča avtomatizacijo številnih nalog, ki so sicer zamudne za učitelje, kot so ocenjevanje testov, nalog in kvizov. S tem učiteljem prihrani čas in omogoči, da se bolj osredotočijo na pedagoški proces [2]. Poleg tega lahko sistemi UI nudijo takojšnje povratne informacije učencem, kar izboljša učni proces [6].</p>
+        </div>
     </div>
-    <div id="date"></div>
-    <script>
-        const now = new Date();
-        const formattedDate = now.toLocaleDateString('sl-SI', 
+    <div class="section">
+        <img src="Virtualni_učitelji.png" alt="Virtualni učitelji">
+        <div class="overlay">
+            <h2>Virtualni učitelji in asistenti</h2>
+            <p>Vse več je aplikacij, ki delujejo kot virtualni učitelji ali asistenti. Ti sistemi lahko učencem pomagajo pri razumevanju snovi izven učilnice, saj so dostopni kadarkoli. Z uporabo naravnega jezika lahko odgovarjajo na vprašanja in ponujajo dodatne razlage, kar učencem omogoča lažje in hitrejše razumevanje snovi [7].</p>
+        </div>
+    </div>
+    <div class="section">
+        <img src="Izzivi_in_omejitve.png" alt="Izzivi in omejitve">
+        <div class="overlay">
+            <h2>Izzivi in omejitve uporabe UI v izobraževanju</h2>
+            <p>Kljub številnim prednostim pa uporaba umetne inteligence v šolah prinaša tudi nekatere izzive. Med glavne težave sodijo etična vprašanja glede zasebnosti podatkov, varnosti in nepristranskosti sistemov UI [5]. Prav tako se pojavlja vprašanje, ali lahko UI nadomesti učitelje, ali pa naj služi kot dopolnitev tradicionalnih metod poučevanja [10].</p>
+        </div>
+    </div>
+</div>
+<div class="cookie-container">
+    <img id="cookie" src="cookie.png" alt="Piškotek">
+    <div id="clicks">Klikni na piškotek!</div>
+</div>
+<div id="date"></div>
+<script>
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString('sl-SI',
         {
             weekday: 'long',
             year: 'numeric',
             month: 'long',
             day: 'numeric'
         });
-        document.getElementById('date').textContent = formattedDate;
+    document.getElementById('date').textContent = formattedDate;
 
-        // Cookie clicker logic
-        let steviloKlikov = 0; 
-        function pravilnoSklanjanje(stevilo) {
-            if (stevilo === 1) {
-                return `${stevilo} klik`;
-            } else if (stevilo >= 2 && stevilo <= 4) {
-                return `${stevilo} klika`;
-            } else {
-                return `${stevilo} klikov`;
-            }
+    // Cookie clicker logic
+    let steviloKlikov = 0;
+    function pravilnoSklanjanje(stevilo) {
+        if (stevilo === 1) {
+            return `${stevilo} klik`;
+        } else if (stevilo >= 2 && stevilo <= 4) {
+            return `${stevilo} klika`;
+        } else {
+            return `${stevilo} klikov`;
         }
+    }
 
-        document.getElementById('cookie').addEventListener('click', () => {
-            steviloKlikov++;
-            document.getElementById('clicks').textContent = pravilnoSklanjanje(steviloKlikov);
-        });
-    </script>
+    document.getElementById('cookie').addEventListener('click', () => {
+        steviloKlikov++;
+        document.getElementById('clicks').textContent = pravilnoSklanjanje(steviloKlikov);
+    });
+
+    // nword nacin
+    const themeToggleButton = document.getElementById('theme-toggle');
+    let isDarkMode = true;
+
+    themeToggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        isDarkMode = !isDarkMode;
+        themeToggleButton.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
+    });
+</script>
 </body>
 </html>
