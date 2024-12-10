@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uporaba umetne inteligence pri izobraževanju - AI in učni stili</title>
     <style>
+        /* Splošni slog */
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(180deg, #000000,#0e5886,#000000);
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(180deg, #000000, #0e5886, #000000);
             color: #ffffff;
             margin: 0;
             padding: 0;
@@ -18,10 +19,24 @@
             background-color: #1a1a1a;
             padding: 20px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         .header h1 {
             margin: 0;
             color: #00aaff;
+            font-size: 2.5em;
+            animation: slideIn 1.5s ease-out;
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
         .nav {
             display: flex;
@@ -34,15 +49,62 @@
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
+            font-size: 1.1em;
+            position: relative;
+        }
+        .nav a:hover {
+            color: #00aaff;
+        }
+        .nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #00aaff;
+            transition: width 0.3s;
+            margin: 0 auto;
+        }
+        .nav a:hover::after {
+            width: 100%;
         }
         .content {
             padding: 20px;
         }
+        .text {
+            margin-bottom: 40px;
+        }
         .text h2 {
             color: #00aaff;
+            font-size: 1.8em;
+            position: relative;
+        }
+        .text h2::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #00aaff;
         }
         .text p {
-            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .image {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .image img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
         }
         #date {
             position: fixed;
@@ -52,34 +114,78 @@
             color: #ffffff;
             padding: 5px 10px;
             border-radius: 5px;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        /* Fade-in animacija */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>AI in učni stili</h1>
+<div class="header">
+    <h1>AI in učni stili</h1>
+</div>
+<div class="nav">
+    <a href="domov.html">Domov</a>
+    <a href="uvod.html">Uvod</a>
+    <a href="kompetence.html">Kompetence prihodnosti</a>
+    <a href="ucne_prakse.html">AI v učnih praksah</a>
+</div>
+<div class="content">
+    <div class="text fade-in">
+        <h2>Različni učni stili in prilagoditve AI</h2>
+        <p>Umetna inteligenca ponuja neverjetno priložnost za prilagoditev učnega procesa različnim učnim stilom. </p>
+        <p>Vizualni učenci lahko dobijo interaktivne grafe in animacije, medtem ko slušni učenci lahko uporabljajo glasovne razlage in podkaste. Prav tako kinestetični učenci uživajo v simulacijah in igrah, ki jih omogoča AI.</p>
     </div>
-    <div class="nav">
-        <a href="domov.html">Domov</a>
-        <a href="uvod.html">Uvod</a>
-        <a href="kompotence.html">Kompotence prihodnosti</a>
-        <a href="ucne_prakse.html">AI v učnih praksah</a>
+    <div class="image fade-in">
+        <img src="ucnistili.png" alt="Učni stili in AI">
     </div>
-    <div class="content">
-        <div class="text">
-        </div>
+    <div class="text fade-in">
+        <h2>Personalizacija učenja</h2>
+        <p>Sistemi AI analizirajo podatke o učencih in prilagajajo vsebine njihovim individualnim potrebam.</p>
+        <p>To pomeni, da lahko vsak učenec prejme vire, ki so zanj najustreznejši, ne glede na to, ali gre za videe, interaktivne vaje ali besedilna gradiva.</p>
     </div>
-    <div id="date"></div>
-    <script>
-        const now = new Date();
-        const formattedDate = now.toLocaleDateString('sl-SI', 
-        {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
+    <div class="image fade-in">
+        <img src="ucenje.jpg" alt="Personalizacija učenja">
+    </div>
+    <div class="text fade-in">
+        <h2>Praktični primeri</h2>
+        <p>Številne platforme, kot so Duolingo, Khan Academy in druge, že uporabljajo umetno inteligenco za prilagoditev učnih vsebin.</p>
+        <p>To vključuje ocenjevanje napredka učencev, prilagajanje težavnosti vaj ter predlaganje naslednjih korakov za izboljšanje znanja.</p>
+    </div>
+    <div class="image fade-in">
+        <img src="ai.jpg" alt="Praktični primeri AI v učenju">
+    </div>
+</div>
+<div id="date"></div>
+<script>
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString('sl-SI', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    document.getElementById('date').textContent = formattedDate;
+
+    // fadein
+    const fadeIns = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
         });
-        document.getElementById('date').textContent = formattedDate;
-    </script>
+    }, { threshold: 0.2 });
+
+    fadeIns.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
