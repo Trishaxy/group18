@@ -7,17 +7,20 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(180deg, #000000,#0e5886,#000000);
+            background: linear-gradient(180deg, #000000, #0e5886, #000000);
             color: #ffffff;
             margin: 0;
             padding: 0;
             background-attachment: fixed;
             background-size: cover;
+            transition: background-color 0.3s ease;
         }
         .header {
             background-color: #1a1a1a;
             padding: 20px;
             text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
         .header h1 {
             margin: 0;
@@ -27,27 +30,49 @@
             display: flex;
             justify-content: center;
             background-color: #000000;
-            padding: 10px 0;
+            padding: 20px 0;
         }
         .nav a {
             color: #ffffff;
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .nav a:hover {
+            color: #00aaff;
         }
         .content {
             padding: 20px;
+        }
+        .text {
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.5s;
         }
         .text p {
             margin-bottom: 80px;
             margin-top: 50px;
             text-align: justify;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
         .text p:nth-child(even) {
             margin-left: 50%;
-        }        
+        }
         .text p:nth-child(odd) {
             margin-right: 50%;
+        }
+        .text p:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+        .text p:nth-child(2) {
+            animation-delay: 1s;
+        }
+        .text p:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+        .text p:nth-child(4) {
+            animation-delay: 2s;
         }
         #date {
             position: fixed;
@@ -58,37 +83,46 @@
             padding: 5px 10px;
             border-radius: 5px;
         }
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Uvod</h1>
+<div class="header">
+    <h1>Uvod</h1>
+</div>
+<div class="nav">
+    <a href="domov.html">Domov</a>
+    <a href="kompotence.html">Kompetence prihodnosti</a>
+    <a href="ucni_stili.html">AI in učni stili</a>
+    <a href="ucne_prakse.html">AI v učnih praksah</a>
+</div>
+<div class="content">
+    <div class="text">
+        <p>Uporaba umetne inteligence (UI) v šolah se v zadnjih letih hitro povečuje. Z napredkom tehnologije so se razvile številne rešitve, ki olajšujejo tako učenje kot poučevanje. UI omogoča personalizirano učenje, avtomatizacijo ocenjevanja in prilagodljive učne metode, kar lahko izboljša učinkovitost izobraževalnega sistema.</p>
+        <p>Ena najpomembnejših prednosti umetne inteligence je sposobnost prilagoditve učnega procesa posameznemu učencu. S pomočjo analize podatkov lahko UI prepozna prednosti in slabosti učenca ter predlaga vaje in vire, ki so prilagojeni njegovemu znanju. To omogoča bolj učinkovito učenje in napredek vsakega posameznika.</p>
+        <p>UI omogoča avtomatizacijo številnih nalog, ki so sicer zamudne za učitelje, kot so ocenjevanje testov, nalog in kvizov. S tem učiteljem prihrani čas in omogoči, da se bolj osredotočijo na pedagoški proces. Poleg tega lahko sistemi UI nudijo takojšnje povratne informacije učencem, kar izboljša učni proces.</p>
+        <p>Vse več je aplikacij, ki delujejo kot virtualni učitelji ali asistenti. Ti sistemi lahko učencem pomagajo pri razumevanju snovi izven učilnice, saj so dostopni kadarkoli. Z uporabo naravnega jezika lahko odgovarjajo na vprašanja in ponujajo dodatne razlage, kar učencem omogoča lažje in hitrejše razumevanje snovi.</p>
     </div>
-    <div class="nav">
-        <a href="domov.html">Domov</a>
-        <a href="kompotence.html">Kompetence prihodnosti</a>
-        <a href="ucni_stili.html">AI in učni stili</a>
-        <a href="ucne_prakse.html">AI v učnih praksah</a>
-    </div>
-    <div class="content">
-        <div class="text">
-            <p>Uporaba umetne inteligence (UI) v šolah se v zadnjih letih hitro povečuje. Z napredkom tehnologije so se razvile številne rešitve, ki olajšujejo tako učenje kot poučevanje. UI omogoča personalizirano učenje, avtomatizacijo ocenjevanja in prilagodljive učne metode, kar lahko izboljša učinkovitost izobraževalnega sistema.</p>
-            <p>Ena najpomembnejših prednosti umetne inteligence je sposobnost prilagoditve učnega procesa posameznemu učencu. S pomočjo analize podatkov lahko UI prepozna prednosti in slabosti učenca ter predlaga vaje in vire, ki so prilagojeni njegovemu znanju. To omogoča bolj učinkovito učenje in napredek vsakega posameznika.</p>
-            <p>UI omogoča avtomatizacijo številnih nalog, ki so sicer zamudne za učitelje, kot so ocenjevanje testov, nalog in kvizov. S tem učiteljem prihrani čas in omogoči, da se bolj osredotočijo na pedagoški proces. Poleg tega lahko sistemi UI nudijo takojšnje povratne informacije učencem, kar izboljša učni proces.</p>
-            <p>Vse več je aplikacij, ki delujejo kot virtualni učitelji ali asistenti. Ti sistemi lahko učencem pomagajo pri razumevanju snovi izven učilnice, saj so dostopni kadarkoli. Z uporabo naravnega jezika lahko odgovarjajo na vprašanja in ponujajo dodatne razlage, kar učencem omogoča lažje in hitrejše razumevanje snovi.</p>
-        </div>
-    </div>
-    <div id="date"></div>
-    <script>
-        const now = new Date();
-        const formattedDate = now.toLocaleDateString('sl-SI', 
+</div>
+<div id="date"></div>
+<script>
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString('sl-SI',
         {
             weekday: 'long',
             year: 'numeric',
             month: 'long',
             day: 'numeric'
         });
-        document.getElementById('date').textContent = formattedDate;
-    </script>
+    document.getElementById('date').textContent = formattedDate;
+</script>
 </body>
 </html>
