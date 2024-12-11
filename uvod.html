@@ -15,6 +15,37 @@
             background-size: cover;
             transition: background-color 0.3s ease;
         }
+
+        body.dark-mode {
+            background-color: #ffffff;
+            color: #000000;
+            background: linear-gradient(180deg, #ffffff, #b3e5fc, #ffffff);
+        }
+
+        body.light-mode {
+            background-color: #000000;
+            color: #ffffff;
+            background: linear-gradient(180deg, #000000, #0e5886, #000000);
+        }
+
+        .toggle-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+
         .header {
             background-color: #1a1a1a;
             padding: 20px;
@@ -94,7 +125,7 @@
         }
     </style>
 </head>
-<body>
+<body class="light-mode">
 <div class="header">
     <h1>Uvod</h1>
 </div>
@@ -113,16 +144,30 @@
     </div>
 </div>
 <div id="date"></div>
+<button class="toggle-button" id="modeToggle">Dark Mode</button>
 <script>
     const now = new Date();
-    const formattedDate = now.toLocaleDateString('sl-SI',
-        {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
+    const formattedDate = now.toLocaleDateString('sl-SI', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
     document.getElementById('date').textContent = formattedDate;
+
+    // Dark/Light mode toggle
+    const toggleButton = document.getElementById('modeToggle');
+    const body = document.body;
+
+    toggleButton.addEventListener('click', () => {
+        if (body.classList.contains('light-mode')) {
+            body.classList.replace('light-mode', 'dark-mode');
+            toggleButton.textContent = 'Light Mode';
+        } else {
+            body.classList.replace('dark-mode', 'light-mode');
+            toggleButton.textContent = 'Dark Mode';
+        }
+    });
 </script>
 </body>
 </html>
