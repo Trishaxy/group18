@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="sl">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uporaba umetne inteligence pri izobraževanju</title>
-    <style>
+    <style>       /* css */
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(180deg, #000000, #0e5886, #000000);
@@ -14,46 +15,101 @@
             background-attachment: fixed;
             background-size: cover;
         }
+
         .header {
             background-color: #1a1a1a;
             padding: 20px;
             text-align: center;
         }
+
         .header h1 {
             margin: 0;
             color: #00aaff;
             font-size: 2.5em;
         }
+
         .nav {
             display: flex;
-            justify-content: center;
+            align-items: center;
             background-color: #000000;
             padding: 10px 0;
         }
+
         .nav a {
             color: #ffffff;
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
             font-size: 1.2em;
+            position: relative;
         }
+
+        .nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #00aaff;
+            transition: width 0.3s;
+            margin: 0 auto;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav a:hover {
+            animation: textColorFade 0.5s ease-in-out forwards;
+        }
+
+        @keyframes textColorFade {
+            0% {
+                color: #ffffff;
+            }
+            100% {
+                color: #00aaff;
+            }
+        }
+
+        .nav .home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20px;
+        }
+
+        .nav .home img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        .nav .center-links {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+
         .content {
             padding: 20px;
             display: flex;
             flex-direction: column;
             gap: 30px;
         }
+
         .section {
             position: relative;
             width: 100%;
             max-width: 700px;
             margin: 0 auto;
         }
+
         .section img {
             width: 100%;
             border-radius: 10px;
             border: 2px solid #00aaff;
         }
+
         .overlay {
             position: absolute;
             top: 0;
@@ -70,21 +126,26 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
         .section:hover .overlay {
             opacity: 1;
         }
+
         .overlay h2 {
             color: #00aaff;
             font-size: 1.8em;
             margin: 0 0 10px;
             text-align: center;
         }
+
         .overlay p {
             font-size: 25px;
             text-align: center;
             margin: 0 20px;
             line-height: 1.6;
         }
+
+        /* datum */
         #date {
             position: fixed;
             bottom: 20px;
@@ -94,27 +155,34 @@
             padding: 5px 10px;
             border-radius: 5px;
         }
+
+        /* kliker */
+
         .cookie-container {
             position: fixed;
             bottom: 20px;
             right: 20px;
             text-align: center;
         }
+
         #cookie {
             width: 150px;
             cursor: pointer;
         }
+
         #clicks {
             font-size: 1.5em;
             margin-top: 10px;
             color: #00ff00;
         }
+
         .theme-toggle-container {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1000;
         }
+
         #theme-toggle {
             padding: 10px 20px;
             font-size: 1em;
@@ -124,47 +192,69 @@
             background-color: #00aaff;
             color: white;
         }
+
+        /* dark/light mode */
         .light-mode {
             background: white;
             color: black;
         }
+
         .light-mode .header {
             background-color: #f0f0f0;
         }
+
         .light-mode .nav {
             background-color: white;
         }
+
         .light-mode .nav a {
             color: #0077cc;
         }
+
         .light-mode .overlay {
             background: rgba(255, 255, 255, 0.8);
             color: black;
         }
+
         .light-mode .overlay h2 {
             color: #0077cc;
         }
+
         .light-mode #date {
             color: black;
         }
+
         .light-mode #clicks {
             color: #0077cc;
         }
     </style>
+
 </head>
+
 <body>
+
 <div class="theme-toggle-container">
     <button id="theme-toggle">Dark Mode</button>
 </div>
+
 <div class="header">
     <h1>Uporaba umetne inteligence pri izobraževanju</h1>
 </div>
+
 <div class="nav">
-    <a href="uvod.html">Uvod</a>
-    <a href="kompotence.html">Kompetence prihodnosti</a>
-    <a href="ucni_stili.html">AI in učni stili</a>
-    <a href="ucne_prakse.html">AI v učnih praksah</a>
+    <a href="domov.html" class="home active">
+        <img src="home_icon.png" alt="Domov">
+        Domov
+    </a>
+
+    <div class="center-links">
+        <a href="uvod.html">Uvod</a>
+        <a href="kompotence.html">Kompetence prihodnosti</a>
+        <a href="ucni_stili.html">AI in učni stili</a>
+        <a href="ucne_prakse.html">AI v učnih praksah</a>
+    </div>
 </div>
+
 <div class="content">
     <div class="section">
         <img src="Personalizirano_učenje.png" alt="Personalizirano učenje">
@@ -195,47 +285,42 @@
         </div>
     </div>
 </div>
+
+
 <div class="cookie-container">
     <img id="cookie" src="cookie.png" alt="Piškotek">
     <div id="clicks">Klikni na piškotek!</div>
 </div>
+
 <div id="date"></div>
-<script>
+
+<script> /* JS */
+    /* datum */
     const now = new Date();
-    const formattedDate = now.toLocaleDateString('sl-SI',
-        {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-    document.getElementById('date').textContent = formattedDate;
+    const formattedDate = now.toLocaleDateString('sl-SI', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    document.getElementById('date').innerText = formattedDate;
 
-    // Cookie clicker logic
-    let steviloKlikov = 0;
-    function pravilnoSklanjanje(stevilo) {
-        if (stevilo === 1) {
-            return `${stevilo} klik`;
-        } else if (stevilo >= 2 && stevilo <= 4) {
-            return `${stevilo} klika`;
-        } else {
-            return `${stevilo} klikov`;
-        }
-    }
-
-    document.getElementById('cookie').addEventListener('click', () => {
-        steviloKlikov++;
-        document.getElementById('clicks').textContent = pravilnoSklanjanje(steviloKlikov);
+    /* dark/ligh mode */
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        themeToggle.textContent = document.body.classList.contains('light-mode')
+            ? 'Dark Mode'
+            : 'Light Mode';
     });
 
-    // nword nacin
-    const themeToggleButton = document.getElementById('theme-toggle');
-    let isDarkMode = true;
-
-    themeToggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-        isDarkMode = !isDarkMode;
-        themeToggleButton.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
+    /* kliker */
+    const cookie = document.getElementById('cookie');
+    const clicks = document.getElementById('clicks');
+    let clickCount = 0;
+    cookie.addEventListener('click', () => {
+        clickCount++;
+        clicks.textContent = `Kliki: ${clickCount}`;
     });
 </script>
 </body>
