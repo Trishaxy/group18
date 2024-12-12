@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uporaba umetne inteligence pri izobraževanju - Kompetence prihodnosti</title>
+    <title>AI in učne prakse</title>
     <style>
+        h1 {text-align: center;}
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(180deg, #000000, #0e5886, #000000);
@@ -13,39 +14,7 @@
             padding: 0;
             background-attachment: fixed;
             background-size: cover;
-            transition: background-color 0.3s ease;
         }
-
-        body.dark-mode {
-            background-color: #ffffff;
-            color: #000000;
-            background: linear-gradient(180deg, #ffffff, #b3e5fc, #ffffff);
-        }
-
-        body.light-mode {
-            background-color: #000000;
-            color: #ffffff;
-            background: linear-gradient(180deg, #000000, #0e5886, #000000);
-        }
-
-        .toggle-button {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        .toggle-button:hover {
-            background-color: #0056b3;
-        }
-
         .header {
             background-color: #1a1a1a;
             padding: 20px;
@@ -58,7 +27,7 @@
         }
         .nav {
             display: flex;
-            justify-content: center;
+            align-items: center;
             background-color: #000000;
             padding: 10px 0;
         }
@@ -68,6 +37,46 @@
             margin: 0 15px;
             font-weight: bold;
             font-size: 1.2em;
+            position: relative;
+        }
+        .nav .home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20px;
+        }
+        .nav .home img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        .nav .center-links {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+        .nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #00aaff;
+            transition: width 0.3s;
+            margin: 0 auto;
+        }
+        .nav a:hover::after {
+            width: 100%;
+        }
+        .nav a:hover {
+            animation: textColorFade 0.5s ease-in-out forwards;
+        }
+        @keyframes textColorFade {
+            0% {
+                color: #ffffff;
+            }
+            100% {
+                color: #00aaff;
+            }
         }
         .content {
             padding: 20px;
@@ -128,27 +137,30 @@
         }
     </style>
 </head>
-<body class="light-mode">
+<body>
 <div class="header">
-    <h1>Kompetence prihodnosti</h1>
+    <h1>AI in učne prakse</h1>
 </div>
 <div class="nav">
-    <a href="domov.html">Domov</a>
-    <a href="uvod.html">Uvod</a>
-    <a href="ucni_stili.html">AI in učni stili</a>
-    <a href="ucne_prakse.html">AI v učnih praksah</a>
+    <a href="domov.html" class="home">
+        <img src="home_icon.png" alt="Domov">
+        Domov
+    </a>
+    <div class="center-links">
+        <a href="uvod.html">Uvod</a>
+        <a href="kompetence.html">Kompetence prihodnosti</a>
+        <a href="ucni_stili.html">AI in učni stili</a>
+        <a href="ucne_prakse.html">AI v učnih praksah</a>
+    </div>
 </div>
 <div class="content">
     <div class="section">
-        <img src="razvoj_kompetenc.png" alt="Razvoj kompetenc prihodnosti">
-        <div class="overlay">
-            <h2>Vpliv umetne inteligence na razvoj kompetenc prihodnosti</h2>
-            <p>UI v izobraževanju učencem ne pomaga le pri razumevanju trenutnih učnih vsebin, temveč jih pripravlja tudi na prihodnost. S tehnologijo, kot so programi za reševanje problemov, simulacije in digitalna orodja, lahko učenci razvijajo veščine, kot so kritično mišljenje, reševanje kompleksnih problemov in sodelovanje [4]. Te kompetence bodo ključne v prihodnjem delovnem okolju, kjer se bodo tehnologije stalno razvijale.</p>
+            <h1>Be with u soon</h1>
+
         </div>
     </div>
 </div>
 <div id="date"></div>
-<button class="toggle-button" id="modeToggle">Dark Mode</button>
 <script>
     const now = new Date();
     const formattedDate = now.toLocaleDateString('sl-SI', {
@@ -158,20 +170,6 @@
         day: 'numeric'
     });
     document.getElementById('date').textContent = formattedDate;
-
-    // Dark/Light mode toggle
-    const toggleButton = document.getElementById('modeToggle');
-    const body = document.body;
-
-    toggleButton.addEventListener('click', () => {
-        if (body.classList.contains('light-mode')) {
-            body.classList.replace('light-mode', 'dark-mode');
-            toggleButton.textContent = 'Light Mode';
-        } else {
-            body.classList.replace('dark-mode', 'light-mode');
-            toggleButton.textContent = 'Dark Mode';
-        }
-    });
 </script>
 </body>
 </html>
