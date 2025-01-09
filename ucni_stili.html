@@ -237,19 +237,19 @@
     <button id="theme-toggle">Dark Mode</button>
 </div>
 <div class="header">
-    <h1>AI in učni stili</h1>
+    <h1 id="title">AI in učni stili</h1>
 </div>
 <div class="nav">
-    <a class="home" href="domov.html">
+    <a class="home" id="home" href="domov.html">
         <img alt="Domov" src="home_icon.png">
         Domov
     </a>
     <div class="center-links">
-        <a href="uvod.html">Uvod</a>
-        <a href="kompetence.html">Kompetence prihodnosti</a>
-        <a href="ucni_stili.html">AI in učni stili</a>
-        <a href="ucne_prakse.html">AI v učnih praksah</a>
-        <a href="calculator.html">Kalkulator</a>
+        <a id="intro" href="uvod.html">Uvod</a>
+        <a id="competencies" href="kompetence.html">Kompetence prihodnosti</a>
+        <a id="learning-styles" href="ucni_stili.html">AI in učni stili</a>
+        <a id="learning-practices" href="ucne_prakse.html">AI v učnih praksah</a>
+        <a id="calculator" href="calculator.html">Kalkulator</a>
     </div>
     <div class="language-selector">
         <select id="language" onchange="changeLanguage()">
@@ -340,14 +340,49 @@
                 : 'dark-mode');
     });
 
-    if(sessionStorage.getItem('language'))
-        document.getElementById('language').value = sessionStorage.getItem('language')
+    /* Language translations */
+    const translations = {
+        en: {
+            title: "Use of Artificial Intelligence in Education",
+            home: '<img alt="Domov" src="home_icon.png">Home',
+            intro: "Introduction",
+            competencies: "Future Competencies",
+            learning_styles: "AI and Learning Styles",
+            learning_practices: "AI in Learning Practices",
+            calculator: "Calculator",
+        },
+        sl: {
+            title: "Uporaba umetne inteligence pri izobraževanju",
+            home: '<img alt="Domov" src="home_icon.png">Domov',
+            intro: "Uvod",
+            competencies: "Kompetence prihodnosti",
+            learning_styles: "AI in učni stili",
+            learning_practices: "AI v učnih praksah",
+            calculator: "Kalkulator",
+        },
+    };
 
     function changeLanguage() {
         const selectedLanguage = document.getElementById('language').value;
         sessionStorage.setItem('language', selectedLanguage);
-        alert(`Language changed to: ${selectedLanguage}`); // Replace with actual language change logic.
+        loadLanguage(selectedLanguage);
     }
+
+    function loadLanguage(language) {
+        const translation = translations[language];
+        document.getElementById('title').textContent = translation.title;
+        document.getElementById('home').innerHTML = translation.home;
+        document.getElementById('intro').textContent = translation.intro;
+        document.getElementById('competencies').textContent = translation.competencies;
+        document.getElementById('learning-styles').textContent = translation.learning_styles;
+        document.getElementById('learning-practices').textContent = translation.learning_practices;
+        document.getElementById('calculator').textContent = translation.calculator;
+    }
+
+    // Load the saved language or default to Slovenian
+    const savedLanguage = sessionStorage.getItem('language') || 'sl';
+    document.getElementById('language').value = savedLanguage;
+    loadLanguage(savedLanguage);
 </script>
 </body>
 </html>

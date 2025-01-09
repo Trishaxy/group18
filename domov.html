@@ -378,7 +378,7 @@ cookie.addEventListener('click', () => {
 const translations = {
     en: {
         title: "Use of Artificial Intelligence in Education",
-        home: "Home",
+        home: '<img alt="Domov" src="home_icon.png">Home',
         intro: "Introduction",
         competencies: "Future Competencies",
         learning_styles: "AI and Learning Styles",
@@ -387,7 +387,7 @@ const translations = {
     },
     sl: {
         title: "Uporaba umetne inteligence pri izobraževanju",
-        home: "Domov",
+        home: '<img alt="Domov" src="home_icon.png">Domov',
         intro: "Uvod",
         competencies: "Kompetence prihodnosti",
         learning_styles: "AI in učni stili",
@@ -405,16 +405,12 @@ function changeLanguage() {
 function loadLanguage(language) {
     const translation = translations[language];
     document.getElementById('title').textContent = translation.title;
-    document.getElementById('home').textContent = translation.home;
+    document.getElementById('home').innerHTML = translation.home;
     document.getElementById('intro').textContent = translation.intro;
     document.getElementById('competencies').textContent = translation.competencies;
     document.getElementById('learning-styles').textContent = translation.learning_styles;
     document.getElementById('learning-practices').textContent = translation.learning_practices;
     document.getElementById('calculator').textContent = translation.calculator;
-    document.getElementById('personalized-learning').textContent = translation.personalized_learning;
-    document.getElementById('personalized-description').textContent = translation.personalized_description;
-    document.getElementById('ai-assessment').textContent = translation.ai_assessment;
-    document.getElementById('assessment-description').textContent = translation.assessment_description;
 }
 
 // Load the saved language or default to Slovenian
