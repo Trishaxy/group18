@@ -3,230 +3,244 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Uporaba umetne inteligence pri izobraževanju</title>
     <style>       /* css */
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(180deg, #000000, #0e5886, #000000);
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(180deg, #000000, #0e5886, #000000);
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    .header {
+        background-color: #1a1a1a;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .header h1 {
+        margin: 0;
+        color: #00aaff;
+        font-size: 2.5em;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        background-color: #000000;
+        padding: 10px 0;
+    }
+
+    .nav a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+        font-size: 1.2em;
+        position: relative;
+    }
+
+    .nav a::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #00aaff;
+        transition: width 0.3s;
+        margin: 0 auto;
+    }
+
+    .nav a:hover::after {
+        width: 100%;
+    }
+
+    .nav a:hover {
+        animation: textColorFade 0.5s ease-in-out forwards;
+    }
+
+    @keyframes textColorFade {
+        0% {
             color: #ffffff;
-            margin: 0;
-            padding: 0;
-            background-attachment: fixed;
-            background-size: cover;
         }
-
-        .header {
-            background-color: #1a1a1a;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .header h1 {
-            margin: 0;
+        100% {
             color: #00aaff;
-            font-size: 2.5em;
         }
+    }
 
-        .nav {
-            display: flex;
-            align-items: center;
-            background-color: #000000;
-            padding: 10px 0;
-        }
+    .nav .home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 20px;
+    }
 
-        .nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 1.2em;
-            position: relative;
-        }
+    .nav .home img {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
 
-        .nav a::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: #00aaff;
-            transition: width 0.3s;
-            margin: 0 auto;
-        }
+    .nav .center-links {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+    }
 
-        .nav a:hover::after {
-            width: 100%;
-        }
+    .language-selector {
+        margin-left: auto;
+        margin-right: 20px;
+    }
 
-        .nav a:hover {
-            animation: textColorFade 0.5s ease-in-out forwards;
-        }
+    .language-selector select {
+        background-color: #000000;
+        color: #ffffff;
+        border: 1px solid #00aaff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 1em;
+    }
 
-        @keyframes textColorFade {
-            0% {
-                color: #ffffff;
-            }
-            100% {
-                color: #00aaff;
-            }
-        }
+    .content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
 
-        .nav .home {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 20px;
-        }
+    .section {
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
 
-        .nav .home img {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-        }
+    .section img {
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid #00aaff;
+    }
 
-        .nav .center-links {
-            display: flex;
-            justify-content: center;
-            flex: 1;
-        }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
 
-        .content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
+    .section:hover .overlay {
+        opacity: 1;
+    }
 
-        .section {
-            position: relative;
-            width: 100%;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+    .overlay h2 {
+        color: #00aaff;
+        font-size: 1.8em;
+        margin: 0 0 10px;
+        text-align: center;
+    }
 
-        .section img {
-            width: 100%;
-            border-radius: 10px;
-            border: 2px solid #00aaff;
-        }
+    .overlay p {
+        font-size: 25px;
+        text-align: center;
+        margin: 0 20px;
+        line-height: 1.6;
+    }
 
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+    /* datum */
+    #date {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        font-size: 1.2em;
+        color: #ffffff;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
 
-        .section:hover .overlay {
-            opacity: 1;
-        }
+    /* kliker */
 
-        .overlay h2 {
-            color: #00aaff;
-            font-size: 1.8em;
-            margin: 0 0 10px;
-            text-align: center;
-        }
+    .cookie-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        text-align: center;
+    }
 
-        .overlay p {
-            font-size: 25px;
-            text-align: center;
-            margin: 0 20px;
-            line-height: 1.6;
-        }
+    #cookie {
+        width: 150px;
+        cursor: pointer;
+    }
 
-        /* datum */
-        #date {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            font-size: 1.2em;
-            color: #ffffff;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
+    #clicks {
+        font-size: 1.5em;
+        margin-top: 10px;
+        color: #00ff00;
+    }
 
-        /* kliker */
+    /* dark/light mode */
+    .theme-toggle-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
 
-        .cookie-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            text-align: center;
-        }
+    #theme-toggle {
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #00aaff;
+        color: white;
+    }
 
-        #cookie {
-            width: 150px;
-            cursor: pointer;
-        }
+    .light-mode {
+        background: white;
+        color: black;
+    }
 
-        #clicks {
-            font-size: 1.5em;
-            margin-top: 10px;
-            color: #00ff00;
-        }
+    .light-mode .header {
+        background-color: #f0f0f0;
+    }
 
-        .theme-toggle-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
+    .light-mode .nav {
+        background-color: white;
+    }
 
-        #theme-toggle {
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #00aaff;
-            color: white;
-        }
+    .light-mode .nav a {
+        color: #0077cc;
+    }
 
-        /* dark/light mode */
-        .light-mode {
-            background: white;
-            color: black;
-        }
+    .light-mode .overlay {
+        background: rgba(255, 255, 255, 0.8);
+        color: black;
+    }
 
-        .light-mode .header {
-            background-color: #f0f0f0;
-        }
+    .light-mode .overlay h2 {
+        color: #0077cc;
+    }
 
-        .light-mode .nav {
-            background-color: white;
-        }
+    .light-mode #date {
+        color: black;
+    }
 
-        .light-mode .nav a {
-            color: #0077cc;
-        }
-
-        .light-mode .overlay {
-            background: rgba(255, 255, 255, 0.8);
-            color: black;
-        }
-
-        .light-mode .overlay h2 {
-            color: #0077cc;
-        }
-
-        .light-mode #date {
-            color: black;
-        }
-
-        .light-mode #clicks {
-            color: #0077cc;
-        }
+    .light-mode #clicks {
+        color: #0077cc;
+    }
     </style>
 
 </head>
@@ -238,90 +252,175 @@
 </div>
 
 <div class="header">
-    <h1>Uporaba umetne inteligence pri izobraževanju</h1>
+    <h1 id="title">Uporaba umetne inteligence pri izobraževanju</h1>
 </div>
 
 <div class="nav">
-    <a href="domov.html" class="home active">
-        <img src="home_icon.png" alt="Domov">
+    <a class="home" id="home" href="domov.html">
+        <img alt="Domov" src="home_icon.png">
         Domov
     </a>
-
     <div class="center-links">
-        <a href="uvod.html">Uvod</a>
-        <a href="kompotence.html">Kompetence prihodnosti</a>
-        <a href="ucni_stili.html">AI in učni stili</a>
-        <a href="ucne_prakse.html">AI v učnih praksah</a>
+        <a id="intro" href="uvod.html">Uvod</a>
+        <a id="competencies" href="kompetence.html">Kompetence prihodnosti</a>
+        <a id="learning-styles" href="ucni_stili.html">AI in učni stili</a>
+        <a id="learning-practices" href="ucne_prakse.html">AI v učnih praksah</a>
+        <a id="calculator" href="calculator.html">Kalkulator</a>
+    </div>
+    <div class="language-selector">
+        <select id="language" onchange="changeLanguage()">
+            <option value="sl">Slovenščina</option>
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+        </select>
     </div>
 </div>
 
 <div class="content">
     <div class="section">
-        <img src="Personalizirano_učenje.png" alt="Personalizirano učenje">
+        <img alt="Personalizirano učenje" src="Personalizirano_učenje.png">
         <div class="overlay">
-            <h2>Personalizirano učenje z UI</h2>
-            <p>Ena najpomembnejših prednosti umetne inteligence je sposobnost prilagoditve učnega procesa posameznemu učencu. S pomočjo analize podatkov lahko UI prepozna prednosti in slabosti učenca ter predlaga vaje in vire, ki so prilagojeni njegovemu znanju. To omogoča bolj učinkovito učenje in napredek vsakega posameznika [3].</p>
+            <h2 id="personalized-learning">Personalizirano učenje z UI</h2>
+            <p id="personalized-description">Ena najpomembnejših prednosti umetne inteligence je sposobnost prilagoditve učnega procesa posameznemu
+                učencu. S pomočjo analize podatkov lahko UI prepozna prednosti in slabosti učenca ter predlaga vaje in
+                vire, ki so prilagojeni njegovemu znanju. To omogoča bolj učinkovito učenje in napredek vsakega
+                posameznika [3].</p>
         </div>
     </div>
     <div class="section">
-        <img src="Avtomatizirano_ocenjevanje.png" alt="Avtomatizirano ocenjevanje">
+        <img alt="Avtomatizirano ocenjevanje" src="Avtomatizirano_ocenjevanje.png">
         <div class="overlay">
-            <h2>Umetna inteligenca kot pomoč pri ocenjevanju</h2>
-            <p>UI omogoča avtomatizacijo številnih nalog, ki so sicer zamudne za učitelje, kot so ocenjevanje testov, nalog in kvizov. S tem učiteljem prihrani čas in omogoči, da se bolj osredotočijo na pedagoški proces [2]. Poleg tega lahko sistemi UI nudijo takojšnje povratne informacije učencem, kar izboljša učni proces [6].</p>
+            <h2 id="ai-assessment">Umetna inteligenca kot pomoč pri ocenjevanju</h2>
+            <p id="assessment-description">UI omogoča avtomatizacijo številnih nalog, ki so sicer zamudne za učitelje, kot so ocenjevanje testov,
+                nalog in kvizov. S tem učiteljem prihrani čas in omogoči, da se bolj osredotočijo na pedagoški proces
+                [2]. Poleg tega lahko sistemi UI nudijo takojšnje povratne informacije učencem, kar izboljša učni proces
+                [6].</p>
         </div>
     </div>
     <div class="section">
-        <img src="Virtualni_učitelji.png" alt="Virtualni učitelji">
+        <img alt="Virtualni učitelji" src="Virtualni_učitelji.png">
         <div class="overlay">
             <h2>Virtualni učitelji in asistenti</h2>
-            <p>Vse več je aplikacij, ki delujejo kot virtualni učitelji ali asistenti. Ti sistemi lahko učencem pomagajo pri razumevanju snovi izven učilnice, saj so dostopni kadarkoli. Z uporabo naravnega jezika lahko odgovarjajo na vprašanja in ponujajo dodatne razlage, kar učencem omogoča lažje in hitrejše razumevanje snovi [7].</p>
+            <p>Vse več je aplikacij, ki delujejo kot virtualni učitelji ali asistenti. Ti sistemi lahko učencem pomagajo
+                pri razumevanju snovi izven učilnice, saj so dostopni kadarkoli. Z uporabo naravnega jezika lahko
+                odgovarjajo na vprašanja in ponujajo dodatne razlage, kar učencem omogoča lažje in hitrejše razumevanje
+                snovi [7].</p>
         </div>
     </div>
     <div class="section">
-        <img src="Izzivi_in_omejitve.png" alt="Izzivi in omejitve">
+        <img alt="Izzivi in omejitve" src="Izzivi_in_omejitve.png">
         <div class="overlay">
             <h2>Izzivi in omejitve uporabe UI v izobraževanju</h2>
-            <p>Kljub številnim prednostim pa uporaba umetne inteligence v šolah prinaša tudi nekatere izzive. Med glavne težave sodijo etična vprašanja glede zasebnosti podatkov, varnosti in nepristranskosti sistemov UI [5]. Prav tako se pojavlja vprašanje, ali lahko UI nadomesti učitelje, ali pa naj služi kot dopolnitev tradicionalnih metod poučevanja [10].</p>
+            <p>Kljub številnim prednostim pa uporaba umetne inteligence v šolah prinaša tudi nekatere izzive. Med glavne
+                težave sodijo etična vprašanja glede zasebnosti podatkov, varnosti in nepristranskosti sistemov UI [5].
+                Prav tako se pojavlja vprašanje, ali lahko UI nadomesti učitelje, ali pa naj služi kot dopolnitev
+                tradicionalnih metod poučevanja [10].</p>
         </div>
     </div>
 </div>
 
 
 <div class="cookie-container">
-    <img id="cookie" src="cookie.png" alt="Piškotek">
+    <img alt="Piškotek" id="cookie" src="cookie.png">
     <div id="clicks">Klikni na piškotek!</div>
 </div>
 
 <div id="date"></div>
 
 <script> /* JS */
-    /* datum */
-    const now = new Date();
-    const formattedDate = now.toLocaleDateString('sl-SI', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
-    document.getElementById('date').innerText = formattedDate;
+/* datum */
+const now = new Date();
+const formattedDate = now.toLocaleDateString('sl-SI', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+});
+document.getElementById('date').innerText = formattedDate;
 
-    /* dark/ligh mode */
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-        themeToggle.textContent = document.body.classList.contains('light-mode')
-            ? 'Dark Mode'
-            : 'Light Mode';
-    });
+/* dark/ligh mode */
 
-    /* kliker */
-    const cookie = document.getElementById('cookie');
-    const clicks = document.getElementById('clicks');
-    let clickCount = 0;
-    cookie.addEventListener('click', () => {
-        clickCount++;
-        clicks.textContent = `Kliki: ${clickCount}`;
-    });
+let theme;
+if (sessionStorage.getItem('theme')) {
+    theme = sessionStorage.getItem('theme');
+} else {
+    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark-mode' : 'light-mode';
+    sessionStorage.setItem('theme', theme);
+}
+
+const themeToggle = document.getElementById('theme-toggle');
+if (theme === 'light-mode') document.body.classList.add('light-mode')
+else themeToggle.textContent = 'Light Mode';
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    themeToggle.textContent = document.body.classList.contains('light-mode')
+        ? 'Dark Mode'
+        : 'Light Mode';
+
+    sessionStorage.setItem('theme',
+        document.body.classList.contains('light-mode')
+            ? 'light-mode'
+            : 'dark-mode');
+});
+
+/* kliker */
+const cookie = document.getElementById('cookie');
+const clicks = document.getElementById('clicks');
+let clickCount = 0;
+cookie.addEventListener('click', () => {
+    clickCount++;
+    clicks.textContent = `Kliki: ${clickCount}`;
+});
+
+/* Language translations */
+const translations = {
+    en: {
+        title: "Use of Artificial Intelligence in Education",
+        home: "Home",
+        intro: "Introduction",
+        competencies: "Future Competencies",
+        learning_styles: "AI and Learning Styles",
+        learning_practices: "AI in Learning Practices",
+        calculator: "Calculator",
+    },
+    sl: {
+        title: "Uporaba umetne inteligence pri izobraževanju",
+        home: "Domov",
+        intro: "Uvod",
+        competencies: "Kompetence prihodnosti",
+        learning_styles: "AI in učni stili",
+        learning_practices: "AI v učnih praksah",
+        calculator: "Kalkulator",
+    },
+};
+
+function changeLanguage() {
+    const selectedLanguage = document.getElementById('language').value;
+    sessionStorage.setItem('language', selectedLanguage);
+    loadLanguage(selectedLanguage);
+}
+
+function loadLanguage(language) {
+    const translation = translations[language];
+    document.getElementById('title').textContent = translation.title;
+    document.getElementById('home').textContent = translation.home;
+    document.getElementById('intro').textContent = translation.intro;
+    document.getElementById('competencies').textContent = translation.competencies;
+    document.getElementById('learning-styles').textContent = translation.learning_styles;
+    document.getElementById('learning-practices').textContent = translation.learning_practices;
+    document.getElementById('calculator').textContent = translation.calculator;
+    document.getElementById('personalized-learning').textContent = translation.personalized_learning;
+    document.getElementById('personalized-description').textContent = translation.personalized_description;
+    document.getElementById('ai-assessment').textContent = translation.ai_assessment;
+    document.getElementById('assessment-description').textContent = translation.assessment_description;
+}
+
+// Load the saved language or default to Slovenian
+const savedLanguage = sessionStorage.getItem('language') || 'sl';
+document.getElementById('language').value = savedLanguage;
+loadLanguage(savedLanguage);
 </script>
 </body>
 </html>

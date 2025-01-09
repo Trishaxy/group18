@@ -2,10 +2,13 @@
 <html lang="sl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>AI in učne prakse</title>
     <style>
-        h1 {text-align: center;}
+        h1 {
+            text-align: center;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(180deg, #000000, #0e5886, #000000);
@@ -15,22 +18,28 @@
             background-attachment: fixed;
             background-size: cover;
         }
+
         .header {
             background-color: #1a1a1a;
             padding: 20px;
             text-align: center;
         }
+
         .header h1 {
             margin: 0;
             color: #00aaff;
             font-size: 2.5em;
         }
+
+        /* Navigation */
+        
         .nav {
             display: flex;
             align-items: center;
             background-color: #000000;
             padding: 10px 0;
         }
+
         .nav a {
             color: #ffffff;
             text-decoration: none;
@@ -39,22 +48,7 @@
             font-size: 1.2em;
             position: relative;
         }
-        .nav .home {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 20px;
-        }
-        .nav .home img {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-        }
-        .nav .center-links {
-            display: flex;
-            justify-content: center;
-            flex: 1;
-        }
+
         .nav a::after {
             content: '';
             display: block;
@@ -64,12 +58,15 @@
             transition: width 0.3s;
             margin: 0 auto;
         }
+
         .nav a:hover::after {
             width: 100%;
         }
+
         .nav a:hover {
             animation: textColorFade 0.5s ease-in-out forwards;
         }
+
         @keyframes textColorFade {
             0% {
                 color: #ffffff;
@@ -78,23 +75,71 @@
                 color: #00aaff;
             }
         }
+
+        .nav .home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20px;
+        }
+
+        .nav .home img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        .nav .center-links {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+
+        @keyframes textColorFade {
+            0% {
+                color: #ffffff;
+            }
+            100% {
+                color: #00aaff;
+            }
+        }
+
+        .language-selector {
+            margin-left: auto;
+            margin-right: 20px;
+        }
+
+        .language-selector select {
+            background-color: #000000;
+            color: #ffffff;
+            border: 1px solid #00aaff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        /* Content */
+        
         .content {
             padding: 20px;
             display: flex;
             flex-direction: column;
             gap: 30px;
         }
+
         .section {
             position: relative;
             width: 100%;
             max-width: 700px;
             margin: 0 auto;
         }
+
         .section img {
             width: 100%;
             border-radius: 10px;
             border: 2px solid #00aaff;
         }
+
         .overlay {
             position: absolute;
             top: 0;
@@ -111,21 +156,25 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
         .section:hover .overlay {
             opacity: 1;
         }
+
         .overlay h2 {
             color: #00aaff;
             font-size: 1.8em;
             margin: 0 0 10px;
             text-align: center;
         }
+
         .overlay p {
             font-size: 1em;
             text-align: center;
             margin: 0 20px;
             line-height: 1.6;
         }
+
         #date {
             position: fixed;
             bottom: 20px;
@@ -135,15 +184,70 @@
             padding: 5px 10px;
             border-radius: 5px;
         }
+
+        /* dark/light mode */
+        .theme-toggle-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        #theme-toggle {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #00aaff;
+            color: white;
+        }
+
+        .light-mode {
+            background: white;
+            color: black;
+        }
+
+        .light-mode .header {
+            background-color: #f0f0f0;
+        }
+
+        .light-mode .nav {
+            background-color: white;
+        }
+
+        .light-mode .nav a {
+            color: #0077cc;
+        }
+
+        .light-mode .overlay {
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+        }
+
+        .light-mode .overlay h2 {
+            color: #0077cc;
+        }
+
+        .light-mode #date {
+            color: black;
+        }
+
+        .light-mode #clicks {
+            color: #0077cc;
+        }
     </style>
 </head>
 <body>
+<div class="theme-toggle-container">
+    <button id="theme-toggle">Dark Mode</button>
+</div>
 <div class="header">
     <h1>AI in učne prakse</h1>
 </div>
 <div class="nav">
-    <a href="domov.html" class="home">
-        <img src="home_icon.png" alt="Domov">
+    <a class="home" href="domov.html">
+        <img alt="Domov" src="home_icon.png">
         Domov
     </a>
     <div class="center-links">
@@ -151,14 +255,23 @@
         <a href="kompetence.html">Kompetence prihodnosti</a>
         <a href="ucni_stili.html">AI in učni stili</a>
         <a href="ucne_prakse.html">AI v učnih praksah</a>
+        <a href="calculator.html">Kalkulator</a>
+    </div>
+    <div class="language-selector">
+        <select id="language" onchange="changeLanguage()">
+            <option value="sl">Slovenščina</option>
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+        </select>
     </div>
 </div>
 <div class="content">
     <div class="section">
-            <h1>Be with u soon</h1>
+        <h1>Be with u soon</h1>
 
-        </div>
     </div>
+</div>
 </div>
 <div id="date"></div>
 <script>
@@ -170,6 +283,42 @@
         day: 'numeric'
     });
     document.getElementById('date').textContent = formattedDate;
+
+    /* dark/ligh mode */
+
+    let theme;
+    if (sessionStorage.getItem('theme')) {
+        theme = sessionStorage.getItem('theme');
+    } else {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark-mode' : 'light-mode';
+        sessionStorage.setItem('theme', theme);
+    }
+
+    const themeToggle = document.getElementById('theme-toggle');
+    if (theme === 'light-mode') document.body.classList.add('light-mode')
+    else themeToggle.textContent = 'Light Mode';
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        themeToggle.textContent = document.body.classList.contains('light-mode')
+            ? 'Dark Mode'
+            : 'Light Mode';
+
+        sessionStorage.setItem('theme',
+            document.body.classList.contains('light-mode')
+                ? 'light-mode'
+                : 'dark-mode');
+    });
+
+    if(sessionStorage.getItem('language')) 
+        document.getElementById('language').value = sessionStorage.getItem('language')
+    
+    function changeLanguage() {
+        const selectedLanguage = document.getElementById('language').value;
+        sessionStorage.setItem('language', selectedLanguage);
+        alert(`Language changed to: ${selectedLanguage}`); // Replace with actual language change logic.
+    }
 </script>
 </body>
 </html>
+    
