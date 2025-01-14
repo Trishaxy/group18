@@ -16,6 +16,10 @@
         background-size: cover;
     }
 
+    #home {
+        white-space: nowrap;
+    }
+
     .header {
         background-color: #1a1a1a;
         padding: 20px;
@@ -273,6 +277,7 @@
             <option value="en">English</option>
             <option value="de">Deutsch</option>
             <option value="es">Español</option>
+            <option value="ja">日本語</option>
         </select>
     </div>
 </div>
@@ -282,7 +287,7 @@
         <img alt="Personalizirano učenje" src="Personalizirano_učenje.png">
         <div class="overlay">
             <h2 id="personalized-learning">Personalizirano učenje z UI</h2>
-            <p id="personalized-description">Ena najpomembnejših prednosti umetne inteligence je sposobnost prilagoditve učnega procesa posameznemu
+            <p id="learning-desc">Ena najpomembnejših prednosti umetne inteligence je sposobnost prilagoditve učnega procesa posameznemu
                 učencu. S pomočjo analize podatkov lahko UI prepozna prednosti in slabosti učenca ter predlaga vaje in
                 vire, ki so prilagojeni njegovemu znanju. To omogoča bolj učinkovito učenje in napredek vsakega
                 posameznika [3].</p>
@@ -292,7 +297,7 @@
         <img alt="Avtomatizirano ocenjevanje" src="Avtomatizirano_ocenjevanje.png">
         <div class="overlay">
             <h2 id="ai-assessment">Umetna inteligenca kot pomoč pri ocenjevanju</h2>
-            <p id="assessment-description">UI omogoča avtomatizacijo številnih nalog, ki so sicer zamudne za učitelje, kot so ocenjevanje testov,
+            <p id="assessment-desc">UI omogoča avtomatizacijo številnih nalog, ki so sicer zamudne za učitelje, kot so ocenjevanje testov,
                 nalog in kvizov. S tem učiteljem prihrani čas in omogoči, da se bolj osredotočijo na pedagoški proces
                 [2]. Poleg tega lahko sistemi UI nudijo takojšnje povratne informacije učencem, kar izboljša učni proces
                 [6].</p>
@@ -301,8 +306,8 @@
     <div class="section">
         <img alt="Virtualni učitelji" src="Virtualni_učitelji.png">
         <div class="overlay">
-            <h2>Virtualni učitelji in asistenti</h2>
-            <p>Vse več je aplikacij, ki delujejo kot virtualni učitelji ali asistenti. Ti sistemi lahko učencem pomagajo
+            <h2 id="virtual-teacher">Virtualni učitelji in asistenti</h2>
+            <p id="teacher-desc">Vse več je aplikacij, ki delujejo kot virtualni učitelji ali asistenti. Ti sistemi lahko učencem pomagajo
                 pri razumevanju snovi izven učilnice, saj so dostopni kadarkoli. Z uporabo naravnega jezika lahko
                 odgovarjajo na vprašanja in ponujajo dodatne razlage, kar učencem omogoča lažje in hitrejše razumevanje
                 snovi [7].</p>
@@ -311,8 +316,8 @@
     <div class="section">
         <img alt="Izzivi in omejitve" src="Izzivi_in_omejitve.png">
         <div class="overlay">
-            <h2>Izzivi in omejitve uporabe UI v izobraževanju</h2>
-            <p>Kljub številnim prednostim pa uporaba umetne inteligence v šolah prinaša tudi nekatere izzive. Med glavne
+            <h2 id="chalanges">Izzivi in omejitve uporabe UI v izobraževanju</h2>
+            <p id="chalanges-desc">Kljub številnim prednostim pa uporaba umetne inteligence v šolah prinaša tudi nekatere izzive. Med glavne
                 težave sodijo etična vprašanja glede zasebnosti podatkov, varnosti in nepristranskosti sistemov UI [5].
                 Prav tako se pojavlja vprašanje, ali lahko UI nadomesti učitelje, ali pa naj služi kot dopolnitev
                 tradicionalnih metod poučevanja [10].</p>
@@ -329,16 +334,6 @@
 <div id="date"></div>
 
 <script> /* JS */
-/* datum */
-const now = new Date();
-const formattedDate = now.toLocaleDateString('sl-SI', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-});
-document.getElementById('date').innerText = formattedDate;
-
 /* dark/ligh mode */
 
 let theme;
@@ -365,14 +360,9 @@ themeToggle.addEventListener('click', () => {
             : 'dark-mode');
 });
 
-/* kliker */
 const cookie = document.getElementById('cookie');
 const clicks = document.getElementById('clicks');
 let clickCount = 0;
-cookie.addEventListener('click', () => {
-    clickCount++;
-    clicks.textContent = `Kliki: ${clickCount}`;
-});
 
 /* Language translations */
 const translations = {
@@ -384,6 +374,16 @@ const translations = {
         learning_styles: "AI and Learning Styles",
         learning_practices: "AI in Learning Practices",
         calculator: "Calculator",
+        personalized_learning: "Personalized learning with AI",
+        learning_desc: "One of the most important advantages of artificial intelligence is its ability to adapt the learning process to each individual student. Through data analysis, AI can identify a student's strengths and weaknesses and suggest exercises and resources tailored to their knowledge. This allows for more effective learning and progress for each individual [3].",
+        ai_assessment: "Artificial Intelligence as an Aid in Assessment",
+        assessment_desc: "AI enables the automation of many tasks that are time-consuming for teachers, such as grading tests, assignments, and quizzes. This saves time for teachers and allows them to focus more on the pedagogical process [2]. Furthermore, AI systems can provide immediate feedback to students, improving the learning process [6].",
+        virtual_teacher: "Virtual Teachers and Assistants",
+        teacher_desc: "There are more and more applications acting as virtual teachers or assistants. These systems can help students understand material outside the classroom, as they are accessible anytime. By using natural language, they can answer questions and provide additional explanations, allowing students to understand the material more easily and quickly [7].",
+        chalanges: "Challenges and Limitations of Using AI in Education",
+        chalanges_desc: "Despite the numerous advantages, the use of artificial intelligence in schools also brings certain challenges. Major issues include ethical concerns regarding data privacy, security, and bias in AI systems [5]. There is also the question of whether AI can replace teachers, or if it should serve as a supplement to traditional teaching methods [10].",
+        cookie_clicks: "Clicks:",
+        click: "Click on the cookie!",
     },
     sl: {
         title: "Uporaba umetne inteligence pri izobraževanju",
@@ -393,6 +393,73 @@ const translations = {
         learning_styles: "AI in učni stili",
         learning_practices: "AI v učnih praksah",
         calculator: "Kalkulator",
+        personalized_learning: "Personalizirano učenje z UI",
+        learning_desc: "Ena najpomembnejših prednosti umetne inteligence je sposobnost prilagoditve učnega procesa posameznemu učencu. S pomočjo analize podatkov lahko UI prepozna prednosti in slabosti učenca ter predlaga vaje in vire, ki so prilagojeni njegovemu znanju. To omogoča bolj učinkovito učenje in napredek vsakega posameznika [3].", 
+        ai_assessment: "Umetna inteligenca kot pomoč pri ocenjevanju", 
+        assessment_desc: "UI omogoča avtomatizacijo številnih nalog, ki so sicer zamudne za učitelje, kot so ocenjevanje testov, nalog in kvizov. S tem učiteljem prihrani čas in omogoči, da se bolj osredotočijo na pedagoški proces [2]. Poleg tega lahko sistemi UI nudijo takojšnje povratne informacije učencem, kar izboljša učni proces [6].", 
+        virtual_teacher: "Virtualni učitelji in asistenti", 
+        teacher_desc: "Vse več je aplikacij, ki delujejo kot virtualni učitelji ali asistenti. Ti sistemi lahko učencem pomagajo pri razumevanju snovi izven učilnice, saj so dostopni kadarkoli. Z uporabo naravnega jezika lahko odgovarjajo na vprašanja in ponujajo dodatne razlage, kar učencem omogoča lažje in hitrejše razumevanje snovi [7].", 
+        chalanges: "Izzivi in omejitve uporabe UI v izobraževanju", 
+        chalanges_desc: "Kljub številnim prednostim pa uporaba umetne inteligence v šolah prinaša tudi nekatere izzive. Med glavne težave sodijo etična vprašanja glede zasebnosti podatkov, varnosti in nepristranskosti sistemov UI [5]. Prav tako se pojavlja vprašanje, ali lahko UI nadomesti učitelje, ali pa naj služi kot dopolnitev tradicionalnih metod poučevanja [10].",
+        cookie_clicks: "Klikov:",
+        click: "Klikni na piškotek!",
+    },
+    de: {
+        title: "Einsatz von Künstlicher Intelligenz in der Bildung",
+        home: '<img alt="Home" src="home_icon.png">Startseite',
+        intro: "Einführung",
+        competencies: "Zukünftige Kompetenzen",
+        learning_styles: "KI und Lernstile",
+        learning_practices: "KI in Lernpraktiken",
+        calculator: "Rechner",
+        personalized_learning: "Personalisiertes Lernen mit KI",
+        learning_desc: "Einer der wichtigsten Vorteile der Künstlichen Intelligenz ist ihre Fähigkeit, den Lernprozess auf jeden einzelnen Schüler anzupassen. Durch die Datenanalyse kann KI die Stärken und Schwächen eines Schülers erkennen und Übungen sowie Ressourcen vorschlagen, die auf dessen Wissen abgestimmt sind. Dies ermöglicht effektiveres Lernen und Fortschritte für jeden Einzelnen [3].",
+        ai_assessment: "Künstliche Intelligenz als Hilfsmittel bei der Bewertung",
+        assessment_desc: "KI ermöglicht die Automatisierung vieler Aufgaben, die für Lehrer zeitaufwendig sind, wie z.B. das Bewerten von Tests, Aufgaben und Quizzen. Dadurch sparen Lehrer Zeit und können sich stärker auf den pädagogischen Prozess konzentrieren [2]. Darüber hinaus können KI-Systeme den Schülern sofortiges Feedback geben, was den Lernprozess verbessert [6].",
+        virtual_teacher: "Virtuelle Lehrer und Assistenten",
+        teacher_desc: "Immer mehr Anwendungen fungieren als virtuelle Lehrer oder Assistenten. Diese Systeme können Schülern helfen, Materialien außerhalb des Klassenzimmers zu verstehen, da sie jederzeit zugänglich sind. Durch die Nutzung natürlicher Sprache können sie auf Fragen antworten und zusätzliche Erklärungen geben, was es den Schülern ermöglicht, das Material leichter und schneller zu verstehen [7].",
+        chalanges: "Herausforderungen und Einschränkungen bei der Verwendung von KI in der Bildung",
+        chalanges_desc: "Trotz der zahlreichen Vorteile bringt der Einsatz von Künstlicher Intelligenz in Schulen auch gewisse Herausforderungen mit sich. Zu den wichtigsten Problemen gehören ethische Fragen bezüglich des Datenschutzes, der Sicherheit und der Verzerrung von KI-Systemen [5]. Es stellt sich auch die Frage, ob KI Lehrer ersetzen kann oder ob sie als Ergänzung zu traditionellen Lehrmethoden dienen sollte [10].",
+        cookie_clicks: "Klicks:",
+        click: "Klicke auf den Keks!",
+    },
+    es: {
+        title: "Uso de la Inteligencia Artificial en la Educación",
+        home: '<img alt="Inicio" src="home_icon.png">Inicio',
+        intro: "Introducción",
+        competencies: "Competencias del Futuro",
+        learning_styles: "IA y Estilos de Aprendizaje",
+        learning_practices: "IA en las Prácticas de Aprendizaje",
+        calculator: "Calculadora",
+        personalized_learning: "Aprendizaje Personalizado con IA",
+        learning_desc: "Una de las ventajas más importantes de la inteligencia artificial es su capacidad para adaptar el proceso de aprendizaje a cada estudiante individual. A través del análisis de datos, la IA puede identificar las fortalezas y debilidades de un estudiante y sugerir ejercicios y recursos ajustados a su conocimiento. Esto permite un aprendizaje más efectivo y el progreso de cada individuo [3].",
+        ai_assessment: "Inteligencia Artificial como Ayuda en la Evaluación",
+        assessment_desc: "La IA permite la automatización de muchas tareas que son laboriosas para los maestros, como la corrección de exámenes, tareas y cuestionarios. Esto ahorra tiempo a los maestros y les permite centrarse más en el proceso pedagógico [2]. Además, los sistemas de IA pueden proporcionar retroalimentación inmediata a los estudiantes, mejorando el proceso de aprendizaje [6].",
+        virtual_teacher: "Maestros y Asistentes Virtuales",
+        teacher_desc: "Cada vez hay más aplicaciones que actúan como maestros o asistentes virtuales. Estos sistemas pueden ayudar a los estudiantes a comprender material fuera del aula, ya que están disponibles en cualquier momento. Al utilizar el lenguaje natural, pueden responder preguntas y proporcionar explicaciones adicionales, lo que permite a los estudiantes comprender el material de manera más fácil y rápida [7].",
+        chalanges: "Desafíos y Limitaciones del Uso de la IA en la Educación",
+        chalanges_desc: "A pesar de las numerosas ventajas, el uso de la inteligencia artificial en las escuelas también presenta ciertos desafíos. Los problemas principales incluyen preocupaciones éticas relacionadas con la privacidad de los datos, la seguridad y los sesgos en los sistemas de IA [5]. También surge la cuestión de si la IA puede reemplazar a los maestros o si debe servir como un complemento a los métodos tradicionales de enseñanza [10].",
+        cookie_clicks: "Clics:",
+        click: "¡Haz clic en la galleta!",
+    },
+    ja: {
+        title: "教育における人工知能の利用",
+        home: '<img alt="ホーム" src="home_icon.png">ホーム',
+        intro: "はじめに",
+        competencies: "未来の能力",
+        learning_styles: "AIと学習スタイル",
+        learning_practices: "学習実践におけるAI",
+        calculator: "計算機",
+        personalized_learning: "AIによるパーソナライズ学習",
+        learning_desc: "人工知能の最も重要な利点の一つは、学習プロセスを各学生に合わせて適応させる能力です。データ分析を通じて、AIは学生の強みと弱みを特定し、その知識に合わせた練習問題やリソースを提案できます。これにより、個々の学生に対してより効果的な学習と進歩が可能になります[3]。",
+        ai_assessment: "評価における人工知能の支援",
+        assessment_desc: "AIは、テスト、課題、クイズの採点など、教師にとって時間がかかる多くのタスクを自動化することを可能にします。これにより、教師は時間を節約し、教育的プロセスにもっと集中することができます[2]。さらに、AIシステムは学生に即時のフィードバックを提供することができ、学習プロセスの改善に繋がります[6]。",
+        virtual_teacher: "バーチャル教師とアシスタント",
+        teacher_desc: "バーチャル教師やアシスタントとして機能するアプリケーションが増えています。これらのシステムは、教室外で学生が教材を理解するのを助けることができ、いつでもアクセス可能です。自然言語を使用して質問に答え、追加の説明を提供することで、学生は教材をより簡単かつ迅速に理解できるようになります[7]。",
+        chalanges: "教育におけるAI使用の課題と制限",
+        chalanges_desc: "数多くの利点にもかかわらず、学校での人工知能の使用にはいくつかの課題も伴います。主な問題としては、データプライバシー、セキュリティ、AIシステムのバイアスに関する倫理的な懸念が挙げられます[5]。また、AIが教師に取って代わることができるのか、それとも伝統的な教授法を補完する役割を果たすべきなのかという問題も浮上しています[10]。",
+        cookie_clicks: "クリック数:",
+        click: "クッキーをクリックしてください！",
     },
 };
 
@@ -400,7 +467,17 @@ function changeLanguage() {
     const selectedLanguage = document.getElementById('language').value;
     sessionStorage.setItem('language', selectedLanguage);
     loadLanguage(selectedLanguage);
+
+    // Format date based on the selected language
+    var nowLocal = new Date();
+    document.getElementById('date').innerText = nowLocal.toLocaleDateString(selectedLanguage, {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
 }
+
 
 function loadLanguage(language) {
     const translation = translations[language];
@@ -411,12 +488,41 @@ function loadLanguage(language) {
     document.getElementById('learning-styles').textContent = translation.learning_styles;
     document.getElementById('learning-practices').textContent = translation.learning_practices;
     document.getElementById('calculator').textContent = translation.calculator;
+    
+    document.getElementById('personalized-learning').textContent = translation.personalized_learning;
+    document.getElementById('learning-desc').textContent = translation.learning_desc;
+    document.getElementById('ai-assessment').textContent = translation.ai_assessment;
+    document.getElementById('assessment-desc').textContent = translation.assessment_desc;
+    document.getElementById('virtual-teacher').textContent = translation.virtual_teacher;
+    document.getElementById('teacher-desc').textContent = translation.teacher_desc;
+    document.getElementById('chalanges').textContent = translation.chalanges;
+    document.getElementById('chalanges-desc').textContent = translation.chalanges_desc;
+    
+    if(clickCount === 0) clicks.textContent = translation.click;
+    else clicks.textContent = translation.cookie_clicks + ` ${clickCount}`;
 }
 
 // Load the saved language or default to Slovenian
 const savedLanguage = sessionStorage.getItem('language') || 'sl';
 document.getElementById('language').value = savedLanguage;
 loadLanguage(savedLanguage);
+
+
+cookie.addEventListener('click', () => {
+    clickCount++;
+    clicks.textContent = translations[(sessionStorage.getItem('language') || 'sl')].cookie_clicks + ` ${clickCount}`;
+});
+
+/* datum */
+const now = new Date();
+const formattedDate = now.toLocaleDateString(savedLanguage, {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+});
+document.getElementById('date').innerText = formattedDate;
+
 </script>
 </body>
 </html>

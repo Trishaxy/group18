@@ -9,6 +9,10 @@
             text-align: center;
         }
 
+        #home {
+            white-space: nowrap;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(180deg, #000000, #0e5886, #000000);
@@ -237,6 +241,8 @@
             color: #0077cc;
         }
     </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
 <div class="theme-toggle-container">
@@ -263,27 +269,24 @@
             <option value="en">English</option>
             <option value="de">Deutsch</option>
             <option value="es">Español</option>
+            <option value="ja">日本語</option>
         </select>
     </div>
 </div>
 <div class="content">
     <div class="section">
-        <h1>Be with u soon</h1>
-
+        <h1 id="soon">Be with u soon</h1>
+        <div id="map" style="height: 500px; width: 100%;"></div>
+        <script>
+            var map = L.map('map').setView([46.559, 15.638], 22);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
+            L.marker([46.55907, 15.63811]).addTo(map).bindPopup('FERI')
+        </script>
     </div>
 </div>
 </div>
 <div id="date"></div>
 <script>
-    const now = new Date();
-    const formattedDate = now.toLocaleDateString('sl-SI', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
-    document.getElementById('date').textContent = formattedDate;
-
     /* dark/ligh mode */
 
     let theme;
@@ -320,6 +323,7 @@
             learning_styles: "AI and Learning Styles",
             learning_practices: "AI in Learning Practices",
             calculator: "Calculator",
+            soon: "We'll be with you soon!",
         },
         sl: {
             title: "Uporaba umetne inteligence pri izobraževanju",
@@ -329,13 +333,54 @@
             learning_styles: "AI in učni stili",
             learning_practices: "AI v učnih praksah",
             calculator: "Kalkulator",
+            soon: "Kmalu bomo z vami!",
         },
+        de: {
+            title: "Einsatz von Künstlicher Intelligenz in der Bildung",
+            home: '<img alt="Home" src="home_icon.png">Startseite',
+            intro: "Einführung",
+            competencies: "Zukünftige Kompetenzen",
+            learning_styles: "KI und Lernstile",
+            learning_practices: "KI in Lernpraktiken",
+            calculator: "Rechner",
+            soon: "Wir sind bald bei Ihnen!",
+        },
+        es: {
+            title: "Uso de la Inteligencia Artificial en la Educación",
+            home: '<img alt="Inicio" src="home_icon.png">Inicio',
+            intro: "Introducción",
+            competencies: "Competencias del Futuro",
+            learning_styles: "IA y Estilos de Aprendizaje",
+            learning_practices: "IA en las Prácticas de Aprendizaje",
+            calculator: "Calculadora",
+            soon: "¡Estaremos con ustedes pronto!",
+        },
+        ja: {
+            title: "教育における人工知能の利用",
+            home: '<img alt="ホーム" src="home_icon.png">ホーム',
+            intro: "はじめに",
+            competencies: "未来の能力",
+            learning_styles: "AIと学習スタイル",
+            learning_practices: "学習実践におけるAI",
+            calculator: "計算機",
+            soon: "すぐにお会いしましょう！",
+        }
     };
+
 
     function changeLanguage() {
         const selectedLanguage = document.getElementById('language').value;
         sessionStorage.setItem('language', selectedLanguage);
         loadLanguage(selectedLanguage);
+
+        // Format date based on the selected language
+        var nowLocal = new Date();
+        document.getElementById('date').innerText = nowLocal.toLocaleDateString(selectedLanguage, {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
     }
 
     function loadLanguage(language) {
@@ -347,12 +392,23 @@
         document.getElementById('learning-styles').textContent = translation.learning_styles;
         document.getElementById('learning-practices').textContent = translation.learning_practices;
         document.getElementById('calculator').textContent = translation.calculator;
+        document.getElementById('soon').textContent = translation.soon;
     }
 
     // Load the saved language or default to Slovenian
     const savedLanguage = sessionStorage.getItem('language') || 'sl';
     document.getElementById('language').value = savedLanguage;
     loadLanguage(savedLanguage);
+
+    /* datum */
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString(savedLanguage, {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    document.getElementById('date').innerText = formattedDate;
 </script>
 </body>
 </html>

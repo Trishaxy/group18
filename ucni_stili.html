@@ -15,6 +15,10 @@
             background-size: cover;
         }
 
+        #home {
+            white-space: nowrap;
+        }
+
         .header {
             background-color: #1a1a1a;
             padding: 20px;
@@ -257,14 +261,15 @@
             <option value="en">English</option>
             <option value="de">Deutsch</option>
             <option value="es">Español</option>
+            <option value="ja">日本語</option>
         </select>
     </div>
 </div>
 <div class="content">
     <div class="text fade-in">
-        <h2>Različni učni stili in prilagoditve AI</h2>
-        <p>Umetna inteligenca ponuja neverjetno priložnost za prilagoditev učnega procesa različnim učnim stilom. </p>
-        <p>Vizualni učenci lahko dobijo interaktivne grafe in animacije, medtem ko slušni učenci lahko uporabljajo
+        <h2 id="styles">Različni učni stili in prilagoditve AI</h2>
+        <p id="styles-desc">Umetna inteligenca ponuja neverjetno priložnost za prilagoditev učnega procesa različnim učnim stilom. </p>
+        <p id="style-desc2">Vizualni učenci lahko dobijo interaktivne grafe in animacije, medtem ko slušni učenci lahko uporabljajo
             glasovne razlage in podkaste. Prav tako kinestetični učenci uživajo v simulacijah in igrah, ki jih omogoča
             AI.</p>
     </div>
@@ -272,19 +277,19 @@
         <img alt="Učni stili in AI" src="ucnistili.png">
     </div>
     <div class="text fade-in">
-        <h2>Personalizacija učenja</h2>
-        <p>Sistemi AI analizirajo podatke o učencih in prilagajajo vsebine njihovim individualnim potrebam.</p>
-        <p>To pomeni, da lahko vsak učenec prejme vire, ki so zanj najustreznejši, ne glede na to, ali gre za videe,
+        <h2 id="learning">Personalizacija učenja</h2>
+        <p id="learning-desc">Sistemi AI analizirajo podatke o učencih in prilagajajo vsebine njihovim individualnim potrebam.</p>
+        <p id="learning-desc2">To pomeni, da lahko vsak učenec prejme vire, ki so zanj najustreznejši, ne glede na to, ali gre za videe,
             interaktivne vaje ali besedilna gradiva.</p>
     </div>
     <div class="image fade-in">
         <img alt="Personalizacija učenja" src="ucenje.jpg">
     </div>
     <div class="text fade-in">
-        <h2>Praktični primeri</h2>
-        <p>Številne platforme, kot so Duolingo, Khan Academy in druge, že uporabljajo umetno inteligenco za prilagoditev
+        <h2 id="practical">Praktični primeri</h2>
+        <p id="practical-desc">Številne platforme, kot so Duolingo, Khan Academy in druge, že uporabljajo umetno inteligenco za prilagoditev
             učnih vsebin.</p>
-        <p>To vključuje ocenjevanje napredka učencev, prilagajanje težavnosti vaj ter predlaganje naslednjih korakov za
+        <p  id="practical-desc2">To vključuje ocenjevanje napredka učencev, prilagajanje težavnosti vaj ter predlaganje naslednjih korakov za
             izboljšanje znanja.</p>
     </div>
     <div class="image fade-in">
@@ -293,15 +298,6 @@
 </div>
 <div id="date"></div>
 <script>
-    const now = new Date();
-    const formattedDate = now.toLocaleDateString('sl-SI', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
-    document.getElementById('date').textContent = formattedDate;
-
     // fadein
     const fadeIns = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver(entries => {
@@ -344,12 +340,21 @@
     const translations = {
         en: {
             title: "Use of Artificial Intelligence in Education",
-            home: '<img alt="Domov" src="home_icon.png">Home',
+            home: '<img alt="Home" src="home_icon.png">Home',
             intro: "Introduction",
             competencies: "Future Competencies",
             learning_styles: "AI and Learning Styles",
             learning_practices: "AI in Learning Practices",
             calculator: "Calculator",
+            styles: "Different Learning Styles and AI Adaptations",
+            styles_desc: "Visual learners can receive interactive graphs and animations, while auditory learners can use voice explanations and podcasts. Kinesthetic learners also enjoy simulations and games enabled by AI.",
+            learning: "Personalized Learning",
+            learning_desc: "This means that every student can receive resources that are most appropriate for them, whether it's videos, interactive exercises, or textual materials.",
+            practical: "Numerous platforms, such as Duolingo, Khan Academy, and others, already use artificial intelligence to customize learning content.",
+            practical_desc: "This includes assessing student progress, adjusting the difficulty of exercises, and suggesting next steps to improve knowledge.",
+            style_desc2: "Visual learners can receive interactive graphs and animations, while auditory learners can use voice explanations and podcasts. Kinesthetic learners also enjoy simulations and games enabled by AI.",
+            learning_desc2: "This means that every student can receive resources that are most appropriate for them, whether it's videos, interactive exercises, or textual materials.",
+            practical_desc2: "This includes assessing student progress, adjusting the difficulty of exercises, and suggesting next steps to improve knowledge.",
         },
         sl: {
             title: "Uporaba umetne inteligence pri izobraževanju",
@@ -359,13 +364,86 @@
             learning_styles: "AI in učni stili",
             learning_practices: "AI v učnih praksah",
             calculator: "Kalkulator",
+            styles: "Različni učni stili in prilagoditve AI",
+            styles_desc: "Vizualni učenci lahko dobijo interaktivne grafe in animacije, medtem ko slušni učenci lahko uporabljajo glasovne razlage in podkaste. Prav tako kinestetični učenci uživajo v simulacijah in igrah, ki jih omogoča AI.",
+            learning: "Personalizacija učenja",
+            learning_desc: "To pomeni, da lahko vsak učenec prejme vire, ki so zanj najustreznejši, ne glede na to, ali gre za videe, interaktivne vaje ali besedilna gradiva.",
+            practical: "Številne platforme, kot so Duolingo, Khan Academy in druge, že uporabljajo umetno inteligenco za prilagoditev učnih vsebin.",
+            practical_desc: "To vključuje ocenjevanje napredka učencev, prilagajanje težavnosti vaj ter predlaganje naslednjih korakov za izboljšanje znanja.",
+            style_desc2: "Vizualni učenci lahko dobijo interaktivne grafe in animacije, medtem ko slušni učenci lahko uporabljajo glasovne razlage in podkaste. Prav tako kinestetični učenci uživajo v simulacijah in igrah, ki jih omogoča AI.",
+            learning_desc2: "To pomeni, da lahko vsak učenec prejme vire, ki so zanj najustreznejši, ne glede na to, ali gre za videe, interaktivne vaje ali besedilna gradiva.",
+            practical_desc2: "To vključuje ocenjevanje napredka učencev, prilagajanje težavnosti vaj ter predlaganje naslednjih korakov za izboljšanje znanja.",
         },
+        de: {
+            title: "Einsatz von Künstlicher Intelligenz in der Bildung",
+            home: '<img alt="Home" src="home_icon.png">Startseite',
+            intro: "Einführung",
+            competencies: "Zukünftige Kompetenzen",
+            learning_styles: "KI und Lernstile",
+            learning_practices: "KI in Lernpraktiken",
+            calculator: "Rechner",
+            styles: "Verschiedene Lernstile und KI-Anpassungen",
+            styles_desc: "Visuelle Lernende können interaktive Diagramme und Animationen erhalten, während auditive Lernende Sprach-Erklärungen und Podcasts verwenden können. Kinästhetische Lernende genießen auch Simulationen und Spiele, die durch KI ermöglicht werden.",
+            learning: "Personalisiertes Lernen",
+            learning_desc: "Das bedeutet, dass jeder Schüler die für ihn am besten geeigneten Ressourcen erhalten kann, sei es Videos, interaktive Übungen oder Textmaterialien.",
+            practical: "Zahlreiche Plattformen wie Duolingo, Khan Academy und andere nutzen bereits Künstliche Intelligenz, um Lerninhalte anzupassen.",
+            practical_desc: "Dies umfasst die Bewertung des Fortschritts der Schüler, die Anpassung der Übungsschwierigkeit und die Vorschläge für die nächsten Schritte zur Verbesserung des Wissens.",
+            style_desc2: "Visuelle Lernende können interaktive Diagramme und Animationen erhalten, während auditive Lernende Sprach-Erklärungen und Podcasts verwenden können. Kinästhetische Lernende genießen auch Simulationen und Spiele, die durch KI ermöglicht werden.",
+            learning_desc2: "Das bedeutet, dass jeder Schüler die für ihn am besten geeigneten Ressourcen erhalten kann, sei es Videos, interaktive Übungen oder Textmaterialien.",
+            practical_desc2: "Dies umfasst die Bewertung des Fortschritts der Schüler, die Anpassung der Übungsschwierigkeit und die Vorschläge für die nächsten Schritte zur Verbesserung des Wissens.",
+        },
+        es: {
+            title: "Uso de la Inteligencia Artificial en la Educación",
+            home: '<img alt="Inicio" src="home_icon.png">Inicio',
+            intro: "Introducción",
+            competencies: "Competencias del Futuro",
+            learning_styles: "IA y Estilos de Aprendizaje",
+            learning_practices: "IA en las Prácticas de Aprendizaje",
+            calculator: "Calculadora",
+            styles: "Diferentes Estilos de Aprendizaje y Adaptaciones de la IA",
+            styles_desc: "Los estudiantes visuales pueden recibir gráficos interactivos y animaciones, mientras que los estudiantes auditivos pueden usar explicaciones de voz y pódcast. Los estudiantes kinestésicos también disfrutan de simulaciones y juegos habilitados por la IA.",
+            learning: "Aprendizaje Personalizado",
+            learning_desc: "Esto significa que cada estudiante puede recibir los recursos que son más apropiados para él, ya sean videos, ejercicios interactivos o materiales textuales.",
+            practical: "Numerosas plataformas, como Duolingo, Khan Academy y otras, ya utilizan la inteligencia artificial para personalizar los contenidos de aprendizaje.",
+            practical_desc: "Esto incluye evaluar el progreso de los estudiantes, ajustar la dificultad de los ejercicios y sugerir los próximos pasos para mejorar el conocimiento.",
+            style_desc2: "Los estudiantes visuales pueden recibir gráficos interactivos y animaciones, mientras que los estudiantes auditivos pueden usar explicaciones de voz y pódcast. Los estudiantes kinestésicos también disfrutan de simulaciones y juegos habilitados por la IA.",
+            learning_desc2: "Esto significa que cada estudiante puede recibir los recursos que son más apropiados para él, ya sean videos, ejercicios interactivos o materiales textuales.",
+            practical_desc2: "Esto incluye evaluar el progreso de los estudiantes, ajustar la dificultad de los ejercicios y sugerir los próximos pasos para mejorar el conocimiento.",
+        },
+        ja: {
+            title: "教育における人工知能の利用",
+            home: '<img alt="ホーム" src="home_icon.png">ホーム',
+            intro: "はじめに",
+            competencies: "未来の能力",
+            learning_styles: "AIと学習スタイル",
+            learning_practices: "学習実践におけるAI",
+            calculator: "計算機",
+            styles: "異なる学習スタイルとAIの適応",
+            styles_desc: "視覚的な学習者はインタラクティブなグラフやアニメーションを受け取ることができ、聴覚的な学習者は音声による説明やポッドキャストを使用できます。運動的な学習者も、AIによって可能になったシミュレーションやゲームを楽しんでいます。",
+            learning: "パーソナライズされた学習",
+            learning_desc: "これは、すべての学生が最も適したリソースを受け取ることを意味します。それが動画、インタラクティブな練習、またはテキスト資料であっても。",
+            practical: "Duolingo、Khan Academyなどの多くのプラットフォームは、すでに学習コンテンツをカスタマイズするために人工知能を使用しています。",
+            practical_desc: "これには、学生の進捗を評価し、練習の難易度を調整し、知識を向上させるための次のステップを提案することが含まれます。",
+            style_desc2: "視覚的な学習者はインタラクティブなグラフやアニメーションを受け取ることができ、聴覚的な学習者は音声による説明やポッドキャストを使用できます。運動的な学習者も、AIによって可能になったシミュレーションやゲームを楽しんでいます。",
+            learning_desc2: "これは、すべての学生が最も適したリソースを受け取ることを意味します。それが動画、インタラクティブな練習、またはテキスト資料であっても。",
+            practical_desc2: "これには、学生の進捗を評価し、練習の難易度を調整し、知識を向上さるための次のステップを提案することが含まれます。",
+        }
     };
 
+    
     function changeLanguage() {
         const selectedLanguage = document.getElementById('language').value;
         sessionStorage.setItem('language', selectedLanguage);
         loadLanguage(selectedLanguage);
+
+        // Format date based on the selected language
+        var nowLocal = new Date();
+        document.getElementById('date').innerText = nowLocal.toLocaleDateString(selectedLanguage, {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
     }
 
     function loadLanguage(language) {
@@ -377,12 +455,32 @@
         document.getElementById('learning-styles').textContent = translation.learning_styles;
         document.getElementById('learning-practices').textContent = translation.learning_practices;
         document.getElementById('calculator').textContent = translation.calculator;
+
+        document.getElementById('styles').textContent = translation.styles;
+        document.getElementById('styles-desc').textContent = translation.styles_desc;
+        document.getElementById('learning').textContent = translation.learning;
+        document.getElementById('learning-desc').textContent = translation.learning_desc;
+        document.getElementById('practical').textContent = translation.practical;
+        document.getElementById('practical-desc').textContent = translation.practical_desc;
+        document.getElementById('style-desc2').innerText = translation.style_desc2;
+        document.getElementById('learning-desc2').innerText = translation.learning_desc2;
+        document.getElementById('practical-desc2').innerText = translation.practical_desc2;
     }
 
     // Load the saved language or default to Slovenian
     const savedLanguage = sessionStorage.getItem('language') || 'sl';
     document.getElementById('language').value = savedLanguage;
     loadLanguage(savedLanguage);
+
+    /* datum */
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString(savedLanguage, {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    document.getElementById('date').innerText = formattedDate;
 </script>
 </body>
 </html>

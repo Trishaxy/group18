@@ -1,0 +1,7 @@
+1. Popravili smo dolocene napake oziroma neskladnosti pri pretvorbi iz temnega v svetli nacin in obratno
+2. Dodali prevode za 5 jezikov
+3. Dodali funkcionalnost, da se stanje nacina in jezika shrani med stranmi
+4. Dodali kalkulator
+5. Dodali interaktivno mapo
+
+Pri nalogi ni bilo vecjih rezav razen manjse neskladnosti kode v eni izmed datotek.
